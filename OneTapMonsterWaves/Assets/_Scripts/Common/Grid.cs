@@ -50,75 +50,78 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
 
-	public static EventHub EventHub;
-	public static GameManager GameLogic;
-	public static SoundManager SoundManager;
-	public static Light DirectionalLight;
-	public static GameObject MainCamera;
+    public static EventHub EventHub;
+    public static GameManager GameManager;
+    public static SoundManager SoundManager;
+    public static GameObject MainCamera;
+    public static GameObject Player;
 
-	// when the program launches, Grid will check that all the needed elements are in place
-	// that's exactly what you do in the static constructor here:
-	//    static Grid()
-	//    {
-	//		InitGrid();
-	// etc ..
-	// (you could use just the one persistent game object, or many - irrelevant)
+    // when the program launches, Grid will check that all the needed elements are in place
+    // that's exactly what you do in the static constructor here:
+    //    static Grid()
+    //    {
+    //		InitGrid();
+    // etc ..
+    // (you could use just the one persistent game object, or many - irrelevant)
 
 
-	// PS. annoying arcane technical note - remember that really, in c# static constructors do not run
-	// until the first time you use them. almost certainly in any large project like this, Grid
-	// would be called zillions of times by all the Awake (etc etc) code everywhere, so it is
-	// a non-issue. but if you're just testing or something, it may be confusing that (for example)
-	// the wake-up alert only appears just before you happen to use Grid, rather than "when you hit play"
-	//    }
+    // PS. annoying arcane technical note - remember that really, in c# static constructors do not run
+    // until the first time you use them. almost certainly in any large project like this, Grid
+    // would be called zillions of times by all the Awake (etc etc) code everywhere, so it is
+    // a non-issue. but if you're just testing or something, it may be confusing that (for example)
+    // the wake-up alert only appears just before you happen to use Grid, rather than "when you hit play"
+    //    }
 
-	void Awake() {
-		InitGrid();
-	}
+    void Awake()
+    {
+        InitGrid();
+    }
 
-	public void InitGrid() {
+    public void InitGrid()
+    {
 
-		GameObject g = this.gameObject;
-		EventHub = (EventHub)SafeComponent( g, "EventHub" );
-		GameLogic = (GameManager)SafeComponent( g, "Game" );
-		SoundManager = (SoundManager)SafeComponent (g, "SoundManager");
+        GameObject g = transform.gameObject;
+        g = SafeFind("EventHub");
+        EventHub = (EventHub)SafeComponent(g, "EventHub");
+        g = SafeFind("GameManager");
+        GameManager = (GameManager)SafeComponent(g, "GameManager");
+        g = SafeFind("SoundManager");
+        SoundManager = (SoundManager)SafeComponent(g, "SoundManager");
 
-		g = SafeFind ("Directional Light");
-		DirectionalLight = (Light)SafeComponent (g, "Light");
+        MainCamera = SafeFind("Main Camera");
+        Player = SafeFind("Player");
+    }
 
-		MainCamera = SafeFind ("Main Camera");
-	}
+    // this has no purpose other than for developers wondering HTF you use Grid
+    // just type Grid.SayHello() anywhere in the project.
+    // it is useful to add a similar routine to (example) PurchaseManager.cs
+    // then from anywhere in the project, you can type Grid.purchaseManager.SayHello()
+    // to check everything is hooked-up properly.
+    public void SayHello()
+    {
+        Debug.Log("Grid is setup!");
+    }
 
-	// this has no purpose other than for developers wondering HTF you use Grid
-	// just type Grid.SayHello() anywhere in the project.
-	// it is useful to add a similar routine to (example) PurchaseManager.cs
-	// then from anywhere in the project, you can type Grid.purchaseManager.SayHello()
-	// to check everything is hooked-up properly.
-	public void SayHello()
-	{
-		Debug.Log("Grid is setup!");
-	}
+    // when Grid wakes up, it checks everything is in place...
+    public GameObject SafeFind(string s)
+    {
+        GameObject g = GameObject.Find(s);
+        if (g == null) bigProblem("The '" + s + "' game object is not in this scene.");
+        return g;
+    }
 
-	// when Grid wakes up, it checks everything is in place...
-	public GameObject SafeFind(string s)
-	{
-		GameObject g = GameObject.Find(s);
-		if (g == null) bigProblem("The '" + s + "' game object is not in this scene.");
-		return g;
-	}
+    public Component SafeComponent(GameObject g, string s)
+    {
+        Component c = g.GetComponent(s);
+        if (c == null) bigProblem("The '" + s + "' component was not found in Gameobject.");
+        return c;
+    }
 
-	public Component SafeComponent(GameObject g, string s)
-	{
-		Component c = g.GetComponent(s);
-		if ( c == null ) bigProblem("The '" +s+ "' component was not found in Gameobject.");
-		return c;
-	}
-
-	private void bigProblem(string error)
-	{
-		Debug.LogError(" >>> Something was not found ... " + error);
-		//Debug.Break();
-	}
+    private void bigProblem(string error)
+    {
+        Debug.LogError(" >>> Something was not found ... " + error);
+        //Debug.Break();
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////
