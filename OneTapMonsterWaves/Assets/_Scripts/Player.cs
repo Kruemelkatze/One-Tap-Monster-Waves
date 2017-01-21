@@ -8,6 +8,10 @@ public class Player : Actor
 
     public HealthBar healthbar;
 
+    public XpBar xpBar;
+
+    public int difficult = 5;
+
     
 
     // Use this for initialization

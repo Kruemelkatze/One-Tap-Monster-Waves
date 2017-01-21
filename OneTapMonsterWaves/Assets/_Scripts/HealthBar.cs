@@ -16,23 +16,14 @@ public class HealthBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        player.healthbar = this;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(healthSlider.maxValue);
         
-        if (healthSlider.maxValue != player.lvl * 10) {
-            healthSlider.maxValue = player.lvl * 10;
-        }
-
-        if (damageSlider.maxValue != player.lvl * 10) {
-            damageSlider.maxValue = player.lvl * 10;
-        }
-
-
-
+        // healthBar red background delay
         if (damageSlider.value > healthSlider.value) {
             if (countAfterHitBar >= waitBetweenDamageDown) {
                 countAfterHitBar = -1;
