@@ -23,11 +23,11 @@ public class Player : Actor
     }
 
     //if something hit the player
-    void OnTriggerEnter(Collider other)
-    {
+    void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("TriggerEnter");
+        //var other = col.transform.gameObject;
 
-        if (other.tag == "Enemy")
-        {
+        if (other.tag == "Enemy") {
 
             Enemy enemy = other.GetComponent<Enemy>();
             Fight fight = new Fight();

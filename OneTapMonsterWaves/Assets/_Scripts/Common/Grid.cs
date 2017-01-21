@@ -119,7 +119,7 @@ public class Grid : MonoBehaviour
     }
 
     public Component SafeComponent(GameObject g, string s)
-    {
+    {   
         Component c = g.GetComponent(s);
         if (c == null) bigProblem("The '" + s + "' component was not found in Gameobject.");
         return c;
