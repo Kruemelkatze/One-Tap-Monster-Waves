@@ -83,6 +83,8 @@ public class Fight : MonoBehaviour {
             if (enemy.hp < 1)
             {
                 this.fight = false;
+                player.xpBar.getXp(enemy.derivedXP);
+                
             }
             
             //look if player is death
