@@ -264,17 +264,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.0030272452
+      value: 0.9753524
+      inSlope: -0.8667491
+      outSlope: -0.8667491
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 0.11639515
+      value: 0.8770909
+      inSlope: 0.09703742
+      outSlope: 0.09703742
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      time: 0.40319088
+      value: 0.5617616
+      inSlope: 0.41456923
+      outSlope: 0.41456923
       tangentMode: 0
+    - serializedVersion: 2
+      time: 0.77407974
+      value: 0.6840695
+      inSlope: 0.8404255
+      outSlope: 0.8404255
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.90017015
+      value: 0.4243797
+      inSlope: -1.7765299
+      outSlope: -1.7765299
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9959637
+      value: 0.51637655
+      inSlope: 0.96036583
+      outSlope: 0.96036583
+      tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
@@ -283,15 +307,39 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
+      value: -0.0028653294
+      inSlope: 0.4523369
+      outSlope: 0.4523369
       tangentMode: 34
     - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
+      time: 0.2182925
+      value: 0.095876426
+      inSlope: 0.7253885
+      outSlope: 0.7253885
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.38350385
+      value: 0.23483995
+      inSlope: 0.24785574
+      outSlope: 0.24785574
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6206331
+      value: 0.28674513
+      inSlope: 0.36276937
+      outSlope: 0.36276937
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 0.83698934
+      value: 0.39636177
+      inSlope: 1.1751113
+      outSlope: 1.1751113
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9889001
+      value: 0.49450314
+      inSlope: 0.6460461
+      outSlope: 0.6460461
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -304,10 +352,16 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1938722553077708, guid: 90a52c1a778d38a4591349266113858d,
     type: 2}
   enemyHolderObject: {fileID: 0}
-  smallEnemyPrefab: {fileID: 1472844470052888, guid: f698c32d7cce7a54ba99f5eca477dd48,
+  greenBlob: {fileID: 1864385620153016, guid: e293575de64cb8f47aa5f798f6be46f5, type: 2}
+  blueBlob: {fileID: 1472844470052888, guid: f698c32d7cce7a54ba99f5eca477dd48, type: 2}
+  redBlob: {fileID: 1868819606143594, guid: eedc54c7fe75d2a48a823687267d2882, type: 2}
+  yellowAlien: {fileID: 1138786363530014, guid: dfe22cfdb1941564182a59b081d25d90,
     type: 2}
-  mediumEnemyPrefab: {fileID: 1326168684745600, guid: a1be7a5fe62a21043a35c76a8fcfe630,
-    type: 2}
+  blueAlien: {fileID: 1495518903919982, guid: 25a4d2055300bdc49a98d9e7318f67d5, type: 2}
+  pinkAlien: {fileID: 1050013718617318, guid: ae58af4bcc96fe344b08bfd5cef26ef3, type: 2}
+  flash: {fileID: 1077786682554296, guid: aff8cfaaa242b6b4e89524df3c492390, type: 2}
+  skeleton: {fileID: 1326168684745600, guid: a1be7a5fe62a21043a35c76a8fcfe630, type: 2}
+  ghost: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72, type: 2}
   drakeEnemyPrefab: {fileID: 1307757574687402, guid: 3e60b88e587efc84d9adb8e0f91a605c,
     type: 2}
   mageEnemyPrefab: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72,

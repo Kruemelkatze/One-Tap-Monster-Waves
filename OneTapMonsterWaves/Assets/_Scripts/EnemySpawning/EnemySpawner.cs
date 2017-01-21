@@ -24,8 +24,20 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemyHolderObject;
 
-    public GameObject smallEnemyPrefab;
-    public GameObject mediumEnemyPrefab;
+    public GameObject greenBlob;
+    public GameObject blueBlob;
+    public GameObject redBlob;
+
+    public GameObject yellowAlien;
+    public GameObject blueAlien;
+    public GameObject pinkAlien;
+
+
+    public GameObject flash;
+    public GameObject flashRed;
+    public GameObject skeleton;
+    public GameObject ghost;
+
     public GameObject drakeEnemyPrefab;
     public GameObject mageEnemyPrefab;
 
@@ -71,11 +83,11 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < NumberOfEnemies; i++)
         {
-            SpawnEnemy();
+            Spawn();
         }
     }
 
-    private void SpawnEnemy()
+    private void Spawn()
     {
         //Position
         float randomYIndex = RandomFromDistribution.RandomChoiceFollowingDistribution(enemiesDistributionValues); //It's actually an index
@@ -94,6 +106,11 @@ public class EnemySpawner : MonoBehaviour
         float deviation = deviationLookupTable[level] * avgLevelDeviation;
         level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
 
+        SpawnEnemy(position, level);
+    }
+
+    public void SpawnEnemy(Vector2 position, int level)
+    {
         //Debug.Log(before + " --> " + level);
         var enemyPrefab = GetEnemyPrefabForLevel(level);
         var newEnemy = GameObject.Instantiate(enemyPrefab, position, Quaternion.identity);
@@ -126,15 +143,22 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject GetEnemyPrefabForLevel(int level)
     {
-        if (level <= 5)
-            return smallEnemyPrefab;
+        if (level <= 1)
+            return greenBlob;
+        else if (level <= 2)
+            return blueBlob;
+        else if (level <= 3)
+            return redBlob;
+        else if (level <= 4)
+            return yellowAlien;
+        else if (level <= 5)
+            return blueAlien;
+        else if (level <= 6)
+            return pinkAlien;
+        else if (level <= 8)
+            return flash;
         else if (level <= 10)
-            return mediumEnemyPrefab;
+            return flashRed;
         else return drakeEnemyPrefab;
-    }
-
-    public enum EnemyType
-    {
-        Small, Medium, Drake, Mage
     }
 }

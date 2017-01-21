@@ -37,10 +37,14 @@ public class XpBar : MonoBehaviour {
 
                 //set XP and Health Bar
                 xpSlider.maxValue = nextLevelXp;
+                
                 player.healthbar.healthSlider.maxValue = player.lvl * 10;
                 player.healthbar.healthSlider.value = player.lvl * 10;
                 player.healthbar.damageSlider.maxValue = player.lvl * 10;
                 player.healthbar.damageSlider.value = player.lvl * 10;
+                Debug.Log("healthbar max: " + player.healthbar.healthSlider.maxValue);
+                Debug.Log("healthbar red max: " + player.healthbar.damageSlider.maxValue);
+
 
                 // look if XP is more as one level up
                 if (xpSlider.value + (float)levelUpXp < xpSlider.maxValue) {
@@ -48,6 +52,7 @@ public class XpBar : MonoBehaviour {
                 }
             }
             player.xp = xpSlider.value;
+            player.hp = player.healthbar.healthSlider.maxValue;
 
         } else {
             xpSlider.value = xpSlider.value + (float) xp;

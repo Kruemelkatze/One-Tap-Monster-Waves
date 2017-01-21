@@ -11,10 +11,10 @@ public class Enemy : Actor
     private bool fight;
     private Vector3 vec3Movement;
 
-    public int attackFrom = 2;
-    public int attackTo = 5;
-    public int defenseFrom = 2;
-    public int defenseTo = 5;
+    public int attackFrom = 1;
+    public int attackTo = 1;
+    public int defenseFrom = 0;
+    public int defenseTo = 1;
 
     // Use this for initialization
     void Start()
@@ -70,11 +70,11 @@ public class Enemy : Actor
     {
         if (left)
         {
-            vec3Movement = Vector3.left * movement;
+            vec3Movement = Vector3.left * movement * Time.deltaTime;
         }
         else
         {
-            vec3Movement = Vector3.right * movement;
+            vec3Movement = Vector3.right * movement * Time.deltaTime;
         }
         transform.Translate(vec3Movement);
     }
@@ -82,7 +82,7 @@ public class Enemy : Actor
 
     IEnumerator dead()
     {
-        yield return new WaitForSeconds(3000);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 
