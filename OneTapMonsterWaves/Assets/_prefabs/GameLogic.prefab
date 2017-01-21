@@ -359,6 +359,7 @@ MonoBehaviour:
     type: 2}
   blueAlien: {fileID: 1495518903919982, guid: 25a4d2055300bdc49a98d9e7318f67d5, type: 2}
   pinkAlien: {fileID: 1050013718617318, guid: ae58af4bcc96fe344b08bfd5cef26ef3, type: 2}
+  flash: {fileID: 1077786682554296, guid: aff8cfaaa242b6b4e89524df3c492390, type: 2}
   skeleton: {fileID: 1326168684745600, guid: a1be7a5fe62a21043a35c76a8fcfe630, type: 2}
   ghost: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72, type: 2}
   drakeEnemyPrefab: {fileID: 1307757574687402, guid: 3e60b88e587efc84d9adb8e0f91a605c,
