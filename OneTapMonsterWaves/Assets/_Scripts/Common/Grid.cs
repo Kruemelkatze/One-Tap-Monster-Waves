@@ -55,6 +55,7 @@ public class Grid : MonoBehaviour
     public static SoundManager SoundManager;
     public static GameObject MainCamera;
     public static GameObject Player;
+    public static World World;
 
     // when the program launches, Grid will check that all the needed elements are in place
     // that's exactly what you do in the static constructor here:
@@ -87,6 +88,8 @@ public class Grid : MonoBehaviour
         GameManager = (GameManager)SafeComponent(g, "GameManager");
         g = SafeFind("SoundManager");
         SoundManager = (SoundManager)SafeComponent(g, "SoundManager");
+        g = SafeFind("World");
+        World = (World)SafeComponent(g, "World");
 
         MainCamera = SafeFind("Main Camera");
         Player = SafeFind("Player");

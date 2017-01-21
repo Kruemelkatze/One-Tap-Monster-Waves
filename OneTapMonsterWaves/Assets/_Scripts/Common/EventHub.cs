@@ -6,6 +6,7 @@ public class EventHub : MonoBehaviour {
 	#region Event delegates
 	public delegate void VoidEvent();
 	public delegate void IntegerParamEvent (int value);
+	public delegate void ObjectParamEvent (object value);
 	public delegate void BoolParamEvent (bool value);
 	public delegate void GameObjectParamEvent(GameObject obj);
 	public delegate void GameObjectIntegerParamEvent(GameObject enemy, int value);

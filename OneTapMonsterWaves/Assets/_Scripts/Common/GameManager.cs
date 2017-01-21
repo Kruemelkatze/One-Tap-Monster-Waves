@@ -5,11 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool playerStarted = false;
+    public float playerOffsetBottom = 1;
+
 
     // Use this for initialization
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
