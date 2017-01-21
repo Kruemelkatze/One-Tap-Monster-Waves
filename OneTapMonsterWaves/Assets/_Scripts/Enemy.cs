@@ -70,11 +70,11 @@ public class Enemy : Actor
     {
         if (left)
         {
-            vec3Movement = Vector3.left * movement;
+            vec3Movement = Vector3.left * movement * Time.deltaTime;
         }
         else
         {
-            vec3Movement = Vector3.right * movement;
+            vec3Movement = Vector3.right * movement * Time.deltaTime;
         }
         transform.Translate(vec3Movement);
     }
@@ -82,7 +82,7 @@ public class Enemy : Actor
 
     IEnumerator dead()
     {
-        yield return new WaitForSeconds(3000);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 

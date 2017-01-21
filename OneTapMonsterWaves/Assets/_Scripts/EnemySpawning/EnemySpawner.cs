@@ -24,8 +24,18 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemyHolderObject;
 
-    public GameObject smallEnemyPrefab;
-    public GameObject mediumEnemyPrefab;
+    public GameObject greenBlob;
+    public GameObject blueBlob;
+    public GameObject redBlob;
+
+    public GameObject yellowAlien;
+    public GameObject blueAlien;
+    public GameObject pinkAlien;
+
+
+    public GameObject skeleton;
+    public GameObject ghost;
+
     public GameObject drakeEnemyPrefab;
     public GameObject mageEnemyPrefab;
 
@@ -126,15 +136,22 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject GetEnemyPrefabForLevel(int level)
     {
-        if (level <= 5)
-            return smallEnemyPrefab;
+        if (level <= 1)
+            return greenBlob;
+        else if (level <= 2)
+            return blueBlob;
+        else if (level <= 3)
+            return redBlob;
+        else if (level <= 4)
+            return yellowAlien;
+        else if (level <= 5)
+            return blueAlien;
+        else if (level <= 6)
+            return pinkAlien;
+        else if (level <= 8)
+            return ghost;
         else if (level <= 10)
-            return mediumEnemyPrefab;
+            return skeleton;
         else return drakeEnemyPrefab;
-    }
-
-    public enum EnemyType
-    {
-        Small, Medium, Drake, Mage
     }
 }
