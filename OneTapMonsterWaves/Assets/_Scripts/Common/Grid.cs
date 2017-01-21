@@ -53,6 +53,7 @@ public class Grid : MonoBehaviour
     public static EventHub EventHub;
     public static GameManager GameManager;
     public static SoundManager SoundManager;
+    public static LevelManager LevelManager;
     public static GameObject MainCamera;
     public static GameObject Player;
     public static World World;
@@ -88,8 +89,12 @@ public class Grid : MonoBehaviour
         GameManager = (GameManager)SafeComponent(g, "GameManager");
         g = SafeFind("SoundManager");
         SoundManager = (SoundManager)SafeComponent(g, "SoundManager");
+
         g = SafeFind("World");
         World = (World)SafeComponent(g, "World");
+
+        g = SafeFind("LevelManager");
+        LevelManager = (LevelManager)SafeComponent(g, "LevelManager");
 
         MainCamera = SafeFind("Main Camera");
         Player = SafeFind("Player");
