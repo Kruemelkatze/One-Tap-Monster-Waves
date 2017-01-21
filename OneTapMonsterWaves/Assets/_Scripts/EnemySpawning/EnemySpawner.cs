@@ -81,11 +81,11 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < NumberOfEnemies; i++)
         {
-            SpawnEnemy();
+            Spawn();
         }
     }
 
-    private void SpawnEnemy()
+    private void Spawn()
     {
         //Position
         float randomYIndex = RandomFromDistribution.RandomChoiceFollowingDistribution(enemiesDistributionValues); //It's actually an index
@@ -104,6 +104,11 @@ public class EnemySpawner : MonoBehaviour
         float deviation = deviationLookupTable[level] * avgLevelDeviation;
         level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
 
+        SpawnEnemy(position, level);
+    }
+
+    public void SpawnEnemy(Vector2 position, int level)
+    {
         //Debug.Log(before + " --> " + level);
         var enemyPrefab = GetEnemyPrefabForLevel(level);
         var newEnemy = GameObject.Instantiate(enemyPrefab, position, Quaternion.identity);
