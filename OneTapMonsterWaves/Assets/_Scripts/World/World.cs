@@ -14,14 +14,17 @@ public class World : MonoBehaviour
     private BoxCollider2D changeCollider;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         changeCollider = GetComponent<BoxCollider2D>();
 
         TiledMap c = (TiledMap)GetComponentInChildren(typeof(TiledMap));
         worldHeight = c.NumTilesHigh;
         worldWidth = c.NumTilesWide;
+    }
 
+    void Start()
+    {
         MoveMapToOrigin();
         MoveCollider();
     }
