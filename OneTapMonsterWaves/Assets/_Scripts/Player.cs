@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : Actor
 {
+
+    public HealthBar healthbar;
+
+    
+
     // Use this for initialization
     void Start()
     {
+
         transform.position = new Vector2(Grid.World.worldWidth / 2f, transform.position.y);
     }
 
@@ -23,10 +30,12 @@ public class Player : Actor
     }
 
     //if something hit the player
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
+
 
             Enemy enemy = other.GetComponent<Enemy>();
             Fight fight = new Fight();
@@ -41,6 +50,12 @@ public class Player : Actor
     {
         yield return new WaitForSeconds(time);
     }
+
+    public void setHp(double hp) {
+        this.hp = hp;
+        healthbar.healthSlider.value = (float) hp;
+    }
+
 
 
 

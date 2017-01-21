@@ -12,66 +12,68 @@ public class Fight : MonoBehaviour {
     bool playerturn = true;
 
     public void fighting()
-    { //temp waiting
+    {
         while (fight)
         {
-            waitingInSec(2);
 
+            
             //player and enemy stats output (temp)
             Debug.Log("Player");
             Debug.Log("LVL: " + player.lvl);
             Debug.Log("HP: " + player.hp);
-            Debug.Log("DEF: " + player.defense);
+        Debug.Log("ATK: " + player.attack);
+        Debug.Log("DEF: " + player.defense);
             Debug.Log("INT: " + player.intelligence);
             Debug.Log(" ");
             Debug.Log("Enemy");
             Debug.Log("LVL: " + enemy.lvl);
             Debug.Log("HP: " + enemy.hp);
-            Debug.Log("DEF: " + enemy.defense);
+        Debug.Log("ATK: " + enemy.attack);
+        Debug.Log("DEF: " + enemy.defense);
             Debug.Log(" ");
 
 
 
             //great random number from 3 times 6(random)
             int randomNumber = Random.Range(1, 6) + Random.Range(1, 6) + Random.Range(1, 6);
+        Debug.Log("Random Nr.: " + randomNumber);
 
-            //fight
-            if (playerturn)
+        //fight
+        if (playerturn)
             {
 
-                double result = ((player.attack + player.lvl) - (enemy.defense + enemy.lvl)) - randomNumber;
-
-                if (result > 0)
-                {
+                double result = ((player.attack + player.lvl) - (enemy.defense + enemy.lvl)) + randomNumber;
+            Debug.Log("Result: " + result);
+            if (result > 0){
                     enemy.hp = enemy.hp - result;
-
+            
                 }
                 else
                 {
-
+            
                     //missed
-
+            
                 }
                 playerturn = false;
-
+            
             }
             else
             {
 
-                double result = ((enemy.attack + enemy.lvl) - (player.defense + player.lvl)) - randomNumber;
+                double result = ((enemy.attack + enemy.lvl) - (player.defense + player.lvl)) + randomNumber;
+            Debug.Log("Result: " + result);
+            if (result > 0){
 
-                if (result > 0)
-                {
-                    enemy.hp = enemy.hp - result;
-
+                    player.setHp(player.hp - result);
+            
                 }
                 else
                 {
-
+            
                     //missed
-
+            
                 }
-
+            
                 playerturn = true;
             }
 
@@ -80,13 +82,13 @@ public class Fight : MonoBehaviour {
             //look if enemy is death
             if (enemy.hp < 1)
             {
-                fight = false;
+                this.fight = false;
             }
-
+            
             //look if player is death
             if (player.hp < 1)
             {
-                fight = false;
+                this.fight = false;
             }
 
 
@@ -106,7 +108,7 @@ public class Fight : MonoBehaviour {
         }
 
     }
-        IEnumerator waitingInSec(float time){
+        IEnumerator waitingInSec(int time){
             yield return new WaitForSeconds(time);
         }
     
