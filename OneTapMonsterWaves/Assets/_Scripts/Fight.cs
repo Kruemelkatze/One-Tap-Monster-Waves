@@ -63,7 +63,8 @@ public class Fight : MonoBehaviour {
                 double result = ((enemy.attack + enemy.lvl) - (player.defense + player.lvl)) + randomNumber;
             Debug.Log("Result: " + result);
             if (result > 0){
-                    player.hp = player.hp - result;
+
+                    player.setHp(player.hp - result);
             
                 }
                 else
