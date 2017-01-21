@@ -34,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
 
 
     public GameObject flash;
+    public GameObject flashRed;
     public GameObject skeleton;
     public GameObject ghost;
 
@@ -157,7 +158,7 @@ public class EnemySpawner : MonoBehaviour
         else if (level <= 8)
             return flash;
         else if (level <= 10)
-            return skeleton;
+            return flashRed;
         else return drakeEnemyPrefab;
     }
 }
