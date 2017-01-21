@@ -42,6 +42,7 @@ public class Player : Actor
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Tag: "+other.tag);
         if (other.tag == "Enemy")
         {
 
@@ -52,6 +53,11 @@ public class Player : Actor
             fight.enemy = enemy;
             fight.player = this;
             fight.fighting();
+        }
+        if(other.tag == "PickUp")
+        {
+            effectOfPickup(other.name);
+            Destroy(other.gameObject);
         }
     }
 
@@ -71,6 +77,14 @@ public class Player : Actor
         //is death
         Grid.EventHub.TriggerPlayerDied();       
         
+    }
+
+    private void effectOfPickup(string name)
+    {
+        if (name.Contains("portionHP"))
+        {
+            setHp(this.hp + 5);
+        }
     }
 
 
