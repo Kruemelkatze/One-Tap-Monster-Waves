@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4760120024326828}
   - component: {fileID: 33823246577268484}
   - component: {fileID: 23877768698410494}
-  - component: {fileID: 114924577906797872}
-  - component: {fileID: 114656971067781374}
+  - component: {fileID: 114588458395068852}
+  - component: {fileID: 114429015683885038}
   m_Layer: 0
   m_Name: mock
   m_TagString: Untagged
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4992957929222898}
-  - component: {fileID: 114374683609433852}
+  - component: {fileID: 114630880645625300}
   m_Layer: 0
   m_Name: mockmap
   m_TagString: Untagged
@@ -140,7 +140,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1282332525045234}
   m_Mesh: {fileID: 4300000, guid: 78cef525e3d7ecb489ee9d47ca02924b, type: 3}
---- !u!114 &114374683609433852
+--- !u!114 &114429015683885038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282332525045234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74efee4889073914b8ae070d65688ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialOpacity: 1
+--- !u!114 &114588458395068852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1282332525045234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1874989c5e2da094ea00112c6a895694, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114630880645625300
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -148,7 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298341669015242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: c0619e460a775cc458d37cb4a214a189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Orientation: 0
@@ -163,26 +186,3 @@ MonoBehaviour:
   ExportScale: 0.015625
   MapWidthInPixels: 1024
   MapHeightInPixels: 4608
---- !u!114 &114656971067781374
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282332525045234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialOpacity: 1
---- !u!114 &114924577906797872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1282332525045234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 

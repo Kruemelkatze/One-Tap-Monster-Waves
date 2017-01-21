@@ -9,6 +9,7 @@ public class World : MonoBehaviour
     public int worldHeight;
     public int worldWidth;
     public int numOfScreens = 3;
+    public int currentScreen = 0;
 
     private BoxCollider2D changeCollider;
 
@@ -21,7 +22,7 @@ public class World : MonoBehaviour
         worldHeight = c.NumTilesHigh;
         worldWidth = c.NumTilesWide;
 
-        MoveMap();
+        MoveMapToOrigin();
         MoveCollider();
     }
 
@@ -31,19 +32,24 @@ public class World : MonoBehaviour
 
     }
 
-    void MoveMap()
+    void MoveMapToOrigin()
     {
         transform.position = new Vector3(transform.position.x, worldHeight, transform.position.z);
     }
 
-    void OnTriggerEnter()
+    void OnTriggerEnter2D(Collider2D other)
     {
-
+        if (other.CompareTag("Player"))
+        {
+            currentScreen++;
+            MoveCollider();
+            Grid.EventHub.TriggerPlayerReachedTopEvent(currentScreen);
+        }
     }
 
     void MoveCollider()
     {
-        var yOffset = -worldHeight + (worldHeight / numOfScreens) * numOfScreens;
+        var yOffset = -this.worldHeight + (worldHeight / numOfScreens) * (currentScreen + 1);
         changeCollider.offset = new Vector2(changeCollider.offset.x, yOffset);
     }
 
