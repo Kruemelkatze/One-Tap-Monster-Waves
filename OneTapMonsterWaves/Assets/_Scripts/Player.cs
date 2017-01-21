@@ -12,12 +12,15 @@ public class Player : Actor
 
     public int difficult = 5;
 
+    public Transform teleportBegin;
+    public Transform fireball;
+
+    private bool move = true;
 
 
     // Use this for initialization
     void Start()
     {
-
         transform.position = new Vector2(Grid.World.worldWidth / 2f, transform.position.y);
     }
 
@@ -29,7 +32,7 @@ public class Player : Actor
             death();
         }
 
-        if (Grid.GameManager.playerStarted)
+        if (Grid.GameManager.playerStarted && move)
         {
             //Moving
             float f = Time.deltaTime;
@@ -42,11 +45,8 @@ public class Player : Actor
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Tag: "+other.tag);
         if (other.tag == "Enemy")
         {
-
-
             Enemy enemy = other.GetComponent<Enemy>();
             Fight fight = new Fight();
 
@@ -93,11 +93,70 @@ public class Player : Actor
         {
             setHp(this.hp + 5);
         }
+        else if (name.Contains("potionLevelUp"))
+        {
+            this.lvl += 1;
+        }
+        else if (name.Contains("potionPoison"))
+        {
+            setHp(this.hp - 5);
+        }
+        else if (name.Contains("sword"))
+        {
+            this.attack += 5;
+        }
+        else if (name.Contains("shield"))
+        {
+            this.defense += 5;
+        }
+        else if (name.Contains("Fireball"))
+        {
+            Debug.Log("Fireball");
+            fireballActivation();
+        }
+        else if (name.Contains("Teleport"))
+        {
+            teleportActivation();
+        }
     }
 
+    public void fireballActivation()
+    {
+        StartCoroutine(StartFireball(2));
+    }
 
+    public void teleportActivation()
+    {
+        //Ask which stage
+        int calculatedY = (int)(transform.position.y - intelligence);
+        int minY = 3;
+        int teleportY = Mathf.Max(minY, calculatedY);
+        StartCoroutine(StartTeleport(2, teleportY));
+    }
 
+    IEnumerator StartTeleport(float time, int teleportPositionY)
+    {
+        this.move = false;
+        Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSeconds(time);
+        this.transform.position = new Vector3(Random.Range(1, 15), 3, 0);
+        Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(time);
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        move = true;
+    }
 
+    IEnumerator StartFireball(float time)
+    {
+        this.move = false;
+        Transform existingFireball = Instantiate(fireball, this.gameObject.transform.position, Quaternion.identity);
+        float radius = existingFireball.localScale.x + intelligence;
+        existingFireball.GetComponent<CircleCollider2D>().radius += (intelligence/10);
+        existingFireball.localScale = new Vector3(radius, radius, 0);
+        yield return new WaitForSeconds(time);
+        move = true;
+    }
 }
 
 

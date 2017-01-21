@@ -11,7 +11,7 @@ public class Actor : MonoBehaviour
 
     public double attack;
     public double defense;
-    public double intelligence;
+    public float intelligence;
 
     public float movement;
 
