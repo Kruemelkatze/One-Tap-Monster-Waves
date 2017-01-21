@@ -12,7 +12,7 @@ public class Player : Actor
 
     public int difficult = 5;
 
-    
+
 
     // Use this for initialization
     void Start()
@@ -24,7 +24,8 @@ public class Player : Actor
     // Update is called once per frame
     void Update()
     {
-        if (hp < 1) {
+        if (hp < 1)
+        {
             death();
         }
 
@@ -59,13 +60,17 @@ public class Player : Actor
         yield return new WaitForSeconds(time);
     }
 
-    public void setHp(double hp) {
+    public void setHp(double hp)
+    {
         this.hp = hp;
-        healthbar.healthSlider.value = (float) hp;
+        healthbar.healthSlider.value = (float)hp;
     }
 
-    void death() {
+    void death()
+    {
         //is death
+        Grid.EventHub.TriggerPlayerDied();       
+        
     }
 
 

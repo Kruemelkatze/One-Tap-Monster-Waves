@@ -47,6 +47,7 @@ public class XpBar : MonoBehaviour {
                     levelUp = false;
                 }
             }
+            player.xp = xpSlider.value;
 
         } else {
             xpSlider.value = xpSlider.value + (float) xp;

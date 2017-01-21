@@ -19,17 +19,17 @@ public class EventHub : MonoBehaviour
 
     #region Events
 
-    public event VoidEvent TestEvent;
+    public event VoidEvent PlayerDied;
     public event IntegerParamEvent PlayerReachedTopEvent;
     public event GameObjectParamEvent TestGOEvent;
 
     #endregion
 
     #region Triggers
-    public void TriggerTestEvent()
+    public void TriggerPlayerDied()
     {
-        if (TestEvent != null)
-            TestEvent();
+        if (PlayerDied != null)
+            PlayerDied();
     }
 
     public void TriggerUpdateObjectEvent(GameObject obj)
@@ -43,6 +43,7 @@ public class EventHub : MonoBehaviour
         if (PlayerReachedTopEvent != null)
             PlayerReachedTopEvent(screen);
     }
+    
 
     //You get the idea on how this is done...
     //Generic .Invoke(...) cannot be done, as the event fields cannot be accessed from outside this class :(

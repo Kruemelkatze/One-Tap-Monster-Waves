@@ -11,13 +11,22 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
+        Grid.EventHub.PlayerDied += PlayerDied;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    void Destroy()
+    {
+        Grid.EventHub.PlayerDied -= PlayerDied;
+    }
+
+    void PlayerDied() {
+        this.playerStarted = false;
     }
 
     public void StartPlayer(float worldPosX)

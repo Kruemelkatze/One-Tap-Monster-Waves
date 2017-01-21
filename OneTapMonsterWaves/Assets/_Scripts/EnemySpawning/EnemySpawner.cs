@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
         float step = 1f / probabilityQuantizationSize;
         for (int i = 0; i < probabilityQuantizationSize; i++)
         {
-            if (i < 5)
+            if (i < 4)
             {
                 enemiesDistributionValues.Add(0);
             }
@@ -95,11 +95,12 @@ public class EnemySpawner : MonoBehaviour
         level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
 
         //Debug.Log(before + " --> " + level);
-		var enemyPrefab = GetEnemyPrefabForLevel(level);
+        var enemyPrefab = GetEnemyPrefabForLevel(level);
         var newEnemy = GameObject.Instantiate(enemyPrefab, position, Quaternion.identity);
+        newEnemy.name = newEnemy.name + " (" + level + ")";
         newEnemy.transform.parent = enemyHolderObject.transform;
         var enemyScript = newEnemy.GetComponent<Enemy>();
-		enemyScript.DeriveValues(level);
+        enemyScript.DeriveValues(level);
     }
 
     public float GetRandomNumber(float minimum, float maximum)

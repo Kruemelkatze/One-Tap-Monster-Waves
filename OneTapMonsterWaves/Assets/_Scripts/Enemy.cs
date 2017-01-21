@@ -51,6 +51,7 @@ public class Enemy : Actor
         this.hp = level * 10;
         this.attack = Random.Range(attackFrom, attackTo);
         this.defense = Random.Range(defenseFrom, defenseTo);
+        this.derivedXP = level;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -79,9 +80,10 @@ public class Enemy : Actor
     }
 
 
-    void dead()
+    IEnumerator dead()
     {
-        Destroy(this);
+        yield return new WaitForSeconds(3000);
+        Destroy(gameObject);
     }
 
 }
