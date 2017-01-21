@@ -86,11 +86,7 @@ public class Enemy : Actor
 
     IEnumerator dead()
     {
-<<<<<<< Updated upstream
-        yield return new WaitForSeconds(3);
-=======
         yield return new WaitForSeconds(2);
->>>>>>> Stashed changes
         Destroy(gameObject);
     }
 

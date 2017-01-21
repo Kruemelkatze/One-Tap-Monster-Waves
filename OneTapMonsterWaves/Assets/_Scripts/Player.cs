@@ -76,7 +76,7 @@ public class Player : Actor
         setHp(hp + addHp);
     }
 
-    public void addIntelligence(double addintelligence) {
+    public void addIntelligence(float addintelligence) {
         intelligence = intelligence + addintelligence;
     }
 
