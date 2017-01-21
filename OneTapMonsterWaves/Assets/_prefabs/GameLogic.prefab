@@ -270,8 +270,8 @@ MonoBehaviour:
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.5191877
-      value: 0.9777781
+      time: 0.5282694
+      value: 0.9975149
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -289,27 +289,33 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 2
       time: 0
-      value: 0.0026315786
+      value: 0.004033693
       inSlope: 0.34370378
       outSlope: 0.34370378
       tangentMode: 34
     - serializedVersion: 2
       time: 0.1756407
-      value: 0.06299995
+      value: 0.064402066
       inSlope: 0.5162655
       outSlope: 0.5162655
       tangentMode: 34
     - serializedVersion: 2
       time: 0.42638656
-      value: 0.23572055
-      inSlope: 0.60742664
-      outSlope: 0.60742664
+      value: 0.23712265
+      inSlope: 0.53189844
+      outSlope: 0.53189844
       tangentMode: 34
     - serializedVersion: 2
-      time: 0.9961578
-      value: 0.535435
-      inSlope: 0.52602595
-      outSlope: 0.52602595
+      time: 0.84076816
+      value: 0.39250317
+      inSlope: 0.5915753
+      outSlope: 0.5915753
+      tangentMode: 34
+    - serializedVersion: 2
+      time: 1.007215
+      value: 0.52702236
+      inSlope: 0.808181
+      outSlope: 0.808181
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
