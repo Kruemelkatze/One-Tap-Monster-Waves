@@ -2,18 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Actor
 {
-    public float playerSpeed = 2f;
-
-    //basic stats
-    public int lvl = 1;
-
-    public double att = 10;
-    public double hp = 10;
-    public double def = 10;
-    public double intel = 10;
-
     // Use this for initialization
     void Start()
     {
@@ -27,7 +17,7 @@ public class Player : MonoBehaviour
         {
             //Moving
             float f = Time.deltaTime;
-            float newY = transform.position.y + f * playerSpeed;
+            float newY = transform.position.y + f * movement;
             transform.position = new Vector2(transform.position.x, newY);
         }
     }
@@ -45,10 +35,6 @@ public class Player : MonoBehaviour
             fight.enemy = enemy;
             fight.player = this;
             fight.fighting();
-
-
-
-
         }
 
 

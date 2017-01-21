@@ -4,20 +4,12 @@ using UnityEngine;
 
 public class Fight : MonoBehaviour {
 
-    
     //basic stats
     public Player player;
     public Enemy enemy;
 
     bool fight = true;
     bool playerturn = true;
-
-    
-
-
-
-
-    
 
     public void fighting()
     { //temp waiting
@@ -29,13 +21,13 @@ public class Fight : MonoBehaviour {
             Debug.Log("Player");
             Debug.Log("LVL: " + player.lvl);
             Debug.Log("HP: " + player.hp);
-            Debug.Log("DEF: " + player.def);
-            Debug.Log("INT: " + player.intel);
+            Debug.Log("DEF: " + player.defense);
+            Debug.Log("INT: " + player.intelligence);
             Debug.Log(" ");
             Debug.Log("Enemy");
             Debug.Log("LVL: " + enemy.lvl);
             Debug.Log("HP: " + enemy.hp);
-            Debug.Log("DEF: " + enemy.def);
+            Debug.Log("DEF: " + enemy.defense);
             Debug.Log(" ");
 
 
@@ -47,7 +39,7 @@ public class Fight : MonoBehaviour {
             if (playerturn)
             {
 
-                double result = ((player.att + player.lvl) - (enemy.def + enemy.lvl)) - randomNumber;
+                double result = ((player.attack + player.lvl) - (enemy.defense + enemy.lvl)) - randomNumber;
 
                 if (result > 0)
                 {
@@ -66,7 +58,7 @@ public class Fight : MonoBehaviour {
             else
             {
 
-                double result = ((enemy.att + enemy.lvl) - (player.def + player.lvl)) - randomNumber;
+                double result = ((enemy.attack + enemy.lvl) - (player.defense + player.lvl)) - randomNumber;
 
                 if (result > 0)
                 {
@@ -103,13 +95,13 @@ public class Fight : MonoBehaviour {
             Debug.Log("Player");
             Debug.Log("LVL: " + player.lvl);
             Debug.Log("HP: " + player.hp);
-            Debug.Log("DEF: " + player.def);
-            Debug.Log("INT: " + player.intel);
+            Debug.Log("DEF: " + player.defense);
+            Debug.Log("INT: " + player.intelligence);
             Debug.Log(" ");
             Debug.Log("Enemy");
             Debug.Log("LVL: " + enemy.lvl);
             Debug.Log("HP: " + enemy.hp);
-            Debug.Log("DEF: " + enemy.def);
+            Debug.Log("DEF: " + enemy.defense);
             Debug.Log(" ");
         }
 
