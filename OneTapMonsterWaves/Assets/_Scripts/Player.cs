@@ -23,9 +23,8 @@ public class Player : Actor
     }
 
     //if something hit the player
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-
         if (other.tag == "Enemy")
         {
 
@@ -36,9 +35,6 @@ public class Player : Actor
             fight.player = this;
             fight.fighting();
         }
-
-
-
     }
 
     IEnumerator waitingInSec(float time)
