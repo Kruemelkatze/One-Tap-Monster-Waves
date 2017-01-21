@@ -24,6 +24,10 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemyHolderObject;
 
+    public GameObject smallEnemyPrefab;
+    public GameObject mediumEnemyPrefab;
+    public GameObject drakeEnemyPrefab;
+    public GameObject mageEnemyPrefab;
 
     private System.Random rand = new System.Random();
 
@@ -43,7 +47,14 @@ public class EnemySpawner : MonoBehaviour
         float step = 1f / probabilityQuantizationSize;
         for (int i = 0; i < probabilityQuantizationSize; i++)
         {
-            enemiesDistributionValues.Add(enemiesDistribution.Evaluate(step * i));
+            if (i < 5)
+            {
+                enemiesDistributionValues.Add(0);
+            }
+            else
+            {
+                enemiesDistributionValues.Add(enemiesDistribution.Evaluate(step * i));
+            }
             avgLevelDistributionValues.Add(avgLevelDistribution.Evaluate(step * i));
         }
 
@@ -71,8 +82,7 @@ public class EnemySpawner : MonoBehaviour
         float randomYPos = Grid.World.worldHeight * (randomYIndex / probabilityQuantizationSize);
         randomYPos = InRange(3, randomYPos, Grid.World.worldHeight - 3);
 
-        float randomX = GetRandomNumber(0, Grid.World.worldWidth);
-        randomX = InRange(1, randomX, Grid.World.worldWidth - 1);
+        float randomX = GetRandomNumber(1, Grid.World.worldWidth - 1);
 
         Vector2 position = new Vector2(randomX, randomYPos);
 
@@ -82,14 +92,14 @@ public class EnemySpawner : MonoBehaviour
         int level = (int)((MaxLevel - MinLevel) * avgLevel) + MinLevel;
         int before = level;
         float deviation = deviationLookupTable[level] * avgLevelDeviation;
-		level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
+        level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
 
-        Debug.Log(before + " --> " + level);
-
-
+        //Debug.Log(before + " --> " + level);
+		var enemyPrefab = GetEnemyPrefabForLevel(level);
         var newEnemy = GameObject.Instantiate(enemyPrefab, position, Quaternion.identity);
         newEnemy.transform.parent = enemyHolderObject.transform;
-        newEnemy.name = "" + level;
+        var enemyScript = newEnemy.GetComponent<Enemy>();
+		enemyScript.DeriveValues(level);
     }
 
     public float GetRandomNumber(float minimum, float maximum)
@@ -113,10 +123,17 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    struct EnemyType
+    public GameObject GetEnemyPrefabForLevel(int level)
     {
-        GameObject prefab;
-        int levelFrom;
-        int levelTo;
+        if (level <= 5)
+            return smallEnemyPrefab;
+        else if (level <= 10)
+            return mediumEnemyPrefab;
+        else return drakeEnemyPrefab;
+    }
+
+    public enum EnemyType
+    {
+        Small, Medium, Drake, Mage
     }
 }

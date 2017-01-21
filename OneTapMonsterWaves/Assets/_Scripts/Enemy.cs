@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Actor {
+public class Enemy : Actor
+{
 
     public double derivedXP;
 
@@ -10,13 +11,19 @@ public class Enemy : Actor {
     private bool fight;
     private Vector3 vec3Movement;
 
+    public int attackFrom = 2;
+    public int attackTo = 5;
+    public int defenseFrom = 2;
+    public int defenseTo = 5;
+
     // Use this for initialization
     void Start()
     {
         if (Random.Range(0, 2) == 0)
         {
             left = false;
-        } else
+        }
+        else
         {
             left = true;
         }
@@ -38,13 +45,21 @@ public class Enemy : Actor {
         }
     }
 
+    public void DeriveValues(int level)
+    {
+        this.lvl = level;
+        this.hp = level * 10;
+        this.attack = Random.Range(attackFrom, attackTo);
+        this.defense = Random.Range(defenseFrom, defenseTo);
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Obstacle")
+        if (col.tag == "Obstacle")
         {
             left = !left;
         }
-        if(col.tag == "Player")
+        if (col.tag == "Player")
         {
             fight = true;
         }
@@ -55,7 +70,8 @@ public class Enemy : Actor {
         if (left)
         {
             vec3Movement = Vector3.left * movement;
-        } else
+        }
+        else
         {
             vec3Movement = Vector3.right * movement;
         }

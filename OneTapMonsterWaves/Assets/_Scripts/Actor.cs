@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Actor : MonoBehaviour {
+public class Actor : MonoBehaviour
+{
 
     public double hp;
     public double xp;
@@ -14,15 +15,11 @@ public class Actor : MonoBehaviour {
 
     public float movement;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
 
 }

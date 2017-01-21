@@ -304,10 +304,14 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1938722553077708, guid: 90a52c1a778d38a4591349266113858d,
     type: 2}
   enemyHolderObject: {fileID: 0}
-  smallEnemyPrefab: {fileID: 0}
-  mediumEnemyPrefab: {fileID: 0}
-  drakeEnemyPrefab: {fileID: 0}
-  mageEnemyPrefab: {fileID: 0}
+  smallEnemyPrefab: {fileID: 1472844470052888, guid: f698c32d7cce7a54ba99f5eca477dd48,
+    type: 2}
+  mediumEnemyPrefab: {fileID: 1326168684745600, guid: a1be7a5fe62a21043a35c76a8fcfe630,
+    type: 2}
+  drakeEnemyPrefab: {fileID: 1307757574687402, guid: 3e60b88e587efc84d9adb8e0f91a605c,
+    type: 2}
+  mageEnemyPrefab: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72,
+    type: 2}
 --- !u!114 &114280402421562444
 MonoBehaviour:
   m_ObjectHideFlags: 1
