@@ -50,6 +50,7 @@ public class XpBar : MonoBehaviour {
 
         } else {
             xpSlider.value = xpSlider.value + (float) xp;
+            player.xp = player.xp + xp;
         }
     }
 

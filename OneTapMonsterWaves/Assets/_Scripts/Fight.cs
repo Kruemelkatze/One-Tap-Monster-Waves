@@ -13,24 +13,16 @@ public class Fight : MonoBehaviour {
 
     public void fighting()
     {
+        int loopounter = 0;
         while (fight)
         {
+            loopounter++;
 
-            
+
             //player and enemy stats output (temp)
-            Debug.Log("Player");
-            Debug.Log("LVL: " + player.lvl);
-            Debug.Log("HP: " + player.hp);
-        Debug.Log("ATK: " + player.attack);
-        Debug.Log("DEF: " + player.defense);
-            Debug.Log("INT: " + player.intelligence);
-            Debug.Log(" ");
-            Debug.Log("Enemy");
-            Debug.Log("LVL: " + enemy.lvl);
-            Debug.Log("HP: " + enemy.hp);
-        Debug.Log("ATK: " + enemy.attack);
-        Debug.Log("DEF: " + enemy.defense);
-            Debug.Log(" ");
+            Debug.Log("        LVL/HP/ATK/DEF/INT ");
+            Debug.Log("Player: " + player.lvl + "/" + player.hp + "/" + player.attack + "/" + player.defense + "/" + player.intelligence);
+            Debug.Log("Enemy" + enemy.lvl + "/" + enemy.hp + "/" + enemy.attack + "/" + enemy.defense + "/" + enemy.intelligence);
 
 
 
@@ -96,18 +88,16 @@ public class Fight : MonoBehaviour {
 
             //player and enemy stats output (temp)
 
-            Debug.Log("Player");
-            Debug.Log("LVL: " + player.lvl);
-            Debug.Log("HP: " + player.hp);
-            Debug.Log("DEF: " + player.defense);
-            Debug.Log("INT: " + player.intelligence);
-            Debug.Log(" ");
-            Debug.Log("Enemy");
-            Debug.Log("LVL: " + enemy.lvl);
-            Debug.Log("HP: " + enemy.hp);
-            Debug.Log("DEF: " + enemy.defense);
-            Debug.Log(" ");
+            Debug.Log("        LVL/HP/ATK/DEF/INT ");
+            Debug.Log("Player: " + player.lvl + "/" + player.hp + "/" + player.attack + "/" + player.defense + "/" + player.intelligence);
+            Debug.Log("Enemy" + enemy.lvl + "/" + enemy.hp + "/" + enemy.attack + "/" + enemy.defense + "/" + enemy.intelligence);
+
+            
+
         }
+       
+        Debug.Log("The fight had " + loopounter + " Rounds.");
+        
 
     }
         IEnumerator waitingInSec(int time){
