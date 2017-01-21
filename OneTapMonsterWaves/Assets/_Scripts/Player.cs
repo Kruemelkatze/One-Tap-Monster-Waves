@@ -24,6 +24,10 @@ public class Player : Actor
     // Update is called once per frame
     void Update()
     {
+        if (hp < 1) {
+            death();
+        }
+
         if (Grid.GameManager.playerStarted)
         {
             //Moving
@@ -58,6 +62,10 @@ public class Player : Actor
     public void setHp(double hp) {
         this.hp = hp;
         healthbar.healthSlider.value = (float) hp;
+    }
+
+    void death() {
+        //is death
     }
 
 

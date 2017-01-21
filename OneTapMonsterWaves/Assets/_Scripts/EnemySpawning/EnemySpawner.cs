@@ -84,7 +84,7 @@ public class EnemySpawner : MonoBehaviour
         float deviation = deviationLookupTable[level] * avgLevelDeviation;
 		level = (int)RandomFromDistribution.RandomNormalDistribution(level, deviation);
 
-        Debug.Log(before + " --> " + level);
+        //Debug.Log(before + " --> " + level);
 
 
         var newEnemy = GameObject.Instantiate(enemyPrefab, position, Quaternion.identity);
