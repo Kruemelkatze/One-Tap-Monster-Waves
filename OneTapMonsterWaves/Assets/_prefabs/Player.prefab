@@ -91,10 +91,13 @@ MonoBehaviour:
   hp: 10
   xp: 0
   lvl: 1
-  attack: 0
-  defense: 0
+  attack: 12
+  defense: 10
   intelligence: 0
-  movement: 5
+  movement: 2
+  healthbar: {fileID: 0}
+  xpBar: {fileID: 0}
+  difficult: 5
 --- !u!212 &212770099691420682
 SpriteRenderer:
   m_ObjectHideFlags: 1
