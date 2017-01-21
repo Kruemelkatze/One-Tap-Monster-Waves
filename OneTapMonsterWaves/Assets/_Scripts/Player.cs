@@ -66,6 +66,14 @@ public class Player : Actor
         healthbar.healthSlider.value = (float)hp;
     }
 
+    public void addHp(double addHp) {
+        setHp(hp + addHp);
+    }
+
+    public void addIntelligence(double addintelligence) {
+        intelligence = intelligence + addintelligence;
+    }
+
     void death()
     {
         //is death
