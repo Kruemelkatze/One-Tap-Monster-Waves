@@ -92,15 +92,15 @@ public class Grid : MonoBehaviour
         g = SafeFind("SoundManager");
         SoundManager = (SoundManager)SafeComponent(g, "SoundManager");
 
-        g = SafeFind("EnemySpawner");
-        EnemySpawner = (EnemySpawner)SafeComponent(g, "EnemySpawner");
-
         g = SafeFind("World");
-        if(g != null)
+        if (g != null)
         {
             World = (World)SafeComponent(g, "World");
         }
-       
+
+        g = SafeFind("EnemySpawner");
+        EnemySpawner = (EnemySpawner)SafeComponent(g, "EnemySpawner");
+
 
         g = SafeFind("LevelManager");
         LevelManager = (LevelManager)SafeComponent(g, "LevelManager");

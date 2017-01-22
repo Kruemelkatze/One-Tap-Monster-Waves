@@ -52,7 +52,7 @@ public class MenuController : MonoBehaviour {
     public void StartIntro()
     {
         newGameScreen.SetActive(false);
-        Grid.LevelManager.loadLevel(3);
+        Application.LoadLevel(3);
         //introScreen.SetActive(true);
         //Handheld.PlayFullScreenMovie("video/intro_video.mp4", Color.black, FullScreenMovieControlMode.CancelOnInput);
     }
