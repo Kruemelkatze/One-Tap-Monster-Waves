@@ -28,6 +28,12 @@ public class Player : Actor
     public AudioClip teleportSound;
 
 
+    public GUIText lvlGUI;
+    public GUIText attackGUI;
+    public GUIText defenseGUI;
+    public GUIText intelligenceGUI;
+
+
 
 
     public int character;
@@ -46,6 +52,8 @@ public class Player : Actor
     // Update is called once per frame
     void Update()
     {
+        guiUpdate();
+
         if (hp < 1)
         {
             death();
@@ -204,6 +212,15 @@ public class Player : Actor
         yield return new WaitForSeconds(time);
         move = true;
     }
+
+    void guiUpdate() {
+        lvlGUI.text = lvl.ToString();
+        attackGUI.text = attack.ToString();
+        defenseGUI.text = defense.ToString();
+        intelligenceGUI.text = intelligence.ToString();
+    }
+
+
 }
 
 
