@@ -12,8 +12,9 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip currentTheme;
 	public float currentThemeVolume = 1;
 
-	public AudioClip StandardTheme;
-
+	public AudioClip MenuTheme;
+	public AudioClip ActionTheme;
+	
 	private int nextSourceToUse = 0;
 	public float lowPitchRange = .95f;
 	public float highPitchRange = 1.05f;

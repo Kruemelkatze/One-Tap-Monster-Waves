@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     {
         Grid.EventHub.PlayerDied += PlayerDied;
         Grid.EventHub.GameWon += GameWon;
+
+        Grid.SoundManager.PlayMusic(Grid.SoundManager.ActionTheme);
     }
 
     // Update is called once per frame
