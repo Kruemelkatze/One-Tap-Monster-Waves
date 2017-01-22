@@ -33,6 +33,9 @@ public class Player : Actor
     public GUIText defenseGUI;
     public GUIText intelligenceGUI;
 
+    public Text healthNrText;
+    public Text xpNrText;
+
 
 
 
@@ -115,7 +118,7 @@ public class Player : Actor
     public void setHp(double hp)
     {
         this.hp = hp;
-        healthbar.healthSlider.value = (float)hp;
+        healthbar.healthSlider.value = (float) hp;
     }
 
     public void addHp(double addHp) {
@@ -218,6 +221,9 @@ public class Player : Actor
         attackGUI.text = attack.ToString();
         defenseGUI.text = defense.ToString();
         intelligenceGUI.text = intelligence.ToString();
+
+        healthNrText.text = hp.ToString();
+        xpNrText.text = xp.ToString();
     }
 
 
