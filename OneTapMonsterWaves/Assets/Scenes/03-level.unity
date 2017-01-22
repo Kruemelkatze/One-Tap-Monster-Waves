@@ -434,6 +434,86 @@ Prefab:
       propertyPath: MenuTheme
       value: 
       objectReference: {fileID: 8300000, guid: 5944b014d9260e341b21dd6d668d3291, type: 3}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[0].inSlope
+      value: 0.70993197
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[0].outSlope
+      value: 0.70993197
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[1].value
+      value: 0.17944834
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[1].time
+      value: 0.2568044
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[2].time
+      value: 0.3797769
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[2].value
+      value: 0.38805512
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[3].inSlope
+      value: 0.47610214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[3].outSlope
+      value: 0.47610214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[3].value
+      value: 0.4690155
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[3].time
+      value: 0.61758775
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[5].time
+      value: 0.9988247
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[5].value
+      value: 0.6703528
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[5].inSlope
+      value: 0.45509094
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[5].outSlope
+      value: 0.45509094
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[4].value
+      value: 0.57772213
+      objectReference: {fileID: 0}
+    - target: {fileID: 114001068351780742, guid: 877216e840bd86e49891eb6a12a09ec5,
+        type: 2}
+      propertyPath: avgLevelDistribution.m_Curve.Array.data[4].time
+      value: 0.79528147
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 877216e840bd86e49891eb6a12a09ec5, type: 2}
   m_IsPrefabParent: 0
@@ -657,7 +737,7 @@ MonoBehaviour:
   xp: 0
   lvl: 15
   attack: 10
-  defense: 0
+  defense: 5
   intelligence: 0
   movement: 0
   derivedXP: 20
