@@ -56,6 +56,11 @@ public class Enemy : Actor
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        handleTrigger(col);
+    }
+
+    public void handleTrigger(Collider2D col)
+    {
         if (col.tag == "Obstacle")
         {
             left = !left;

@@ -63,14 +63,15 @@ public class Player : Actor
         if (hp < 1)
         {
             death();
-            if (gameOver) {
+            if (gameOver)
+            {
                 Debug.Log("GameOver Sound Start");
                 Grid.SoundManager.PlaySingle(gameOverSound);
                 gameOver = false;
             }
-            
 
-           
+
+
         }
 
         if (Grid.GameManager.playerStarted && move)
@@ -106,12 +107,17 @@ public class Player : Actor
             fight.enemy = enemy;
             fight.player = this;
             fight.fighting();
-            if (character <= 0) {
+            if (character <= 0)
+            {
                 Grid.SoundManager.PlaySingle(kniteHitSound);
 
-            } else if (character <= 1) {
+            }
+            else if (character <= 1)
+            {
                 Grid.SoundManager.PlaySingle(mageHitSound);
-            } else {
+            }
+            else
+            {
                 Grid.SoundManager.PlaySingle(kniteHitSound);
             }
 
@@ -139,7 +145,7 @@ public class Player : Actor
     public void setHp(double hp)
     {
         this.hp = hp;
-        healthbar.healthSlider.value = (float) hp;
+        healthbar.healthSlider.value = (float)hp;
     }
 
     public void addHp(double addHp)
@@ -208,20 +214,20 @@ public class Player : Actor
     public void teleportActivation()
     {
         //Ask which stage
-        int calculatedY = (int)(transform.position.y - intelligence);
-        int minY = 3;
-        int teleportY = Mathf.Max(minY, calculatedY);
+        float calculatedY = transform.position.y - intelligence;
+        float minY = Grid.World.GetCurrentWorldBase() + 3;
+        float teleportY = Mathf.Max(minY, calculatedY);
         StartCoroutine(StartTeleport(2, teleportY));
     }
 
-    IEnumerator StartTeleport(float time, int teleportPositionY)
+    IEnumerator StartTeleport(float time, float teleportPositionY)
     {
         Grid.GameManager.TeleportActive = true;
         this.move = false;
         Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
         this.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(time);
-        this.transform.position = new Vector3(Random.Range(1, 15), 3, 0);
+        this.transform.position = new Vector3(Random.Range(1, 15), teleportPositionY, 0);
         this.originalX = this.transform.position.x;
         Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(time);
@@ -241,7 +247,8 @@ public class Player : Actor
         move = true;
     }
 
-    void guiUpdate() {
+    void guiUpdate()
+    {
         lvlGUI.text = lvl.ToString();
         attackGUI.text = attack.ToString();
         defenseGUI.text = defense.ToString();
