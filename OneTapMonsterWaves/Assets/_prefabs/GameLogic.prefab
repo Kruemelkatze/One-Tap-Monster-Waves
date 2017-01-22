@@ -43,6 +43,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1345680275520798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4972285883417496}
+  - component: {fileID: 114346856274970518}
+  m_Layer: 0
+  m_Name: PickupManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1383219583522602
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,6 +197,7 @@ Transform:
   - {fileID: 4704040278623052}
   - {fileID: 4685314418488734}
   - {fileID: 4822470420556574}
+  - {fileID: 4972285883417496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -249,6 +266,19 @@ Transform:
   m_Father: {fileID: 4481125728721396}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4972285883417496
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345680275520798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4481125728721396}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114001068351780742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -276,28 +306,76 @@ MonoBehaviour:
       outSlope: 0.09703742
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.40319088
-      value: 0.5617616
+      time: 0.33056036
+      value: 0.60639775
+      inSlope: -2.0604305
+      outSlope: -2.0604305
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.33359045
+      value: -0.00061522983
+      inSlope: -13.051033
+      outSlope: -13.051033
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.3873003
+      value: -0.004762863
+      inSlope: -0.004917483
+      outSlope: -0.004917483
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.40265316
+      value: 0.58384615
+      inSlope: 7.2868342
+      outSlope: 7.2868342
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.45171776
+      value: 0.6137995
       inSlope: 0.41456923
       outSlope: 0.41456923
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.77407974
-      value: 0.6840695
-      inSlope: 0.8404255
-      outSlope: 0.8404255
+      time: 0.6842003
+      value: 0.6678722
+      inSlope: -0.47849366
+      outSlope: -0.47849366
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.90017015
-      value: 0.4243797
+      time: 0.6885575
+      value: 0.008519521
+      inSlope: -0.7688999
+      outSlope: -0.7688999
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7338632
+      value: 0.0014672875
+      inSlope: 14.28634
+      outSlope: 14.28634
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7399728
+      value: 0.6365147
+      inSlope: -1.0973215
+      outSlope: -1.0973215
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7653698
+      value: 0.6100452
+      inSlope: -1.4845641
+      outSlope: -1.4845641
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.82053626
+      value: 0.4125384
       inSlope: -1.7765299
       outSlope: -1.7765299
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.9959637
-      value: 0.51637655
-      inSlope: 0.96036583
-      outSlope: 0.96036583
+      time: 0.9972064
+      value: 0.384979
+      inSlope: -0.15599354
+      outSlope: -0.15599354
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -326,20 +404,20 @@ MonoBehaviour:
     - serializedVersion: 2
       time: 0.6206331
       value: 0.28674513
-      inSlope: 0.36276937
-      outSlope: 0.36276937
+      inSlope: 0.6463811
+      outSlope: 0.6463811
       tangentMode: 34
     - serializedVersion: 2
-      time: 0.83698934
-      value: 0.39636177
+      time: 0.80233455
+      value: 0.48186925
       inSlope: 1.1751113
       outSlope: 1.1751113
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.9889001
-      value: 0.49450314
-      inSlope: 0.6460461
-      outSlope: 0.6460461
+      time: 0.99261314
+      value: 0.53725684
+      inSlope: 0.2910868
+      outSlope: 0.2910868
       tangentMode: 34
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -360,6 +438,7 @@ MonoBehaviour:
   blueAlien: {fileID: 1495518903919982, guid: 25a4d2055300bdc49a98d9e7318f67d5, type: 2}
   pinkAlien: {fileID: 1050013718617318, guid: ae58af4bcc96fe344b08bfd5cef26ef3, type: 2}
   flash: {fileID: 1077786682554296, guid: aff8cfaaa242b6b4e89524df3c492390, type: 2}
+  flashRed: {fileID: 1438184891069038, guid: 1c9778a1c626c9045b65895eab2c8fda, type: 2}
   skeleton: {fileID: 1326168684745600, guid: a1be7a5fe62a21043a35c76a8fcfe630, type: 2}
   ghost: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72, type: 2}
   drakeEnemyPrefab: {fileID: 1307757574687402, guid: 3e60b88e587efc84d9adb8e0f91a605c,
@@ -390,6 +469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStarted: 0
   playerOffsetBottom: 1
+  TeleportActive: 0
 --- !u!114 &114305597343067220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,6 +481,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cbe8b9b1d088d4c91dc40ff46ec5b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114346856274970518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1345680275520798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74414a9bca3b9994f85c4772f3c68f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupsStage1:
+  - {fileID: 4941075059824126, guid: 947b4477613c3d04e8c6c26f63f3541b, type: 2}
+  - {fileID: 4044014273499286, guid: d43777c2e1009f642be3e937e79ff632, type: 2}
+  - {fileID: 4252237855549324, guid: 4c8d92f7186f0144a863aaf039d90405, type: 2}
+  - {fileID: 4842028862169726, guid: 29cd12f9be737474b8047da528a000ed, type: 2}
+  - {fileID: 4995082939828008, guid: 570c49a40c3f6874b80873fa0a99ad79, type: 2}
+  - {fileID: 4876076447912930, guid: 9f163a97fece254458d81f8d756e1f20, type: 2}
+  - {fileID: 4205930141727842, guid: 2cae62d85dcc8e54f9cee213850700e9, type: 2}
+  pickupsStage2:
+  - {fileID: 4941075059824126, guid: 947b4477613c3d04e8c6c26f63f3541b, type: 2}
+  - {fileID: 4044014273499286, guid: d43777c2e1009f642be3e937e79ff632, type: 2}
+  - {fileID: 4252237855549324, guid: 4c8d92f7186f0144a863aaf039d90405, type: 2}
+  - {fileID: 4205930141727842, guid: 2cae62d85dcc8e54f9cee213850700e9, type: 2}
+  - {fileID: 4995082939828008, guid: 570c49a40c3f6874b80873fa0a99ad79, type: 2}
+  - {fileID: 4205930141727842, guid: 2cae62d85dcc8e54f9cee213850700e9, type: 2}
+  - {fileID: 4876076447912930, guid: 9f163a97fece254458d81f8d756e1f20, type: 2}
+  - {fileID: 4842028862169726, guid: 29cd12f9be737474b8047da528a000ed, type: 2}
+  pickupsStage3:
+  - {fileID: 4941075059824126, guid: 947b4477613c3d04e8c6c26f63f3541b, type: 2}
+  - {fileID: 4044014273499286, guid: d43777c2e1009f642be3e937e79ff632, type: 2}
+  - {fileID: 4252237855549324, guid: 4c8d92f7186f0144a863aaf039d90405, type: 2}
+  - {fileID: 4995082939828008, guid: 570c49a40c3f6874b80873fa0a99ad79, type: 2}
+  - {fileID: 4995082939828008, guid: 570c49a40c3f6874b80873fa0a99ad79, type: 2}
+  - {fileID: 4995082939828008, guid: 570c49a40c3f6874b80873fa0a99ad79, type: 2}
 --- !u!114 &114443090593518302
 MonoBehaviour:
   m_ObjectHideFlags: 1
