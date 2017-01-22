@@ -22,7 +22,7 @@ public class GameOverControl : MonoBehaviour
     {
         //CheckHighscore();
         var t = text.GetComponent<Text>();
-        t.text = score < 0 ? "GAME OVER" : "YOU WON! Score: " + score;
+        t.text = score < 0 ? "GAME OVER" : "YOU WON!\r\nScore: " + score;
     }
 
     // Update is called once per frame
@@ -50,5 +50,10 @@ public class GameOverControl : MonoBehaviour
     public void GoToMenu()
     {
         Application.LoadLevel("00-start");
+    }
+
+    public void Again()
+    {
+        Application.LoadLevel("03-level");
     }
 }

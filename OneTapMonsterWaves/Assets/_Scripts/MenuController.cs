@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(LoadingScreenWait(5));
+        StartCoroutine(LoadingScreenWait(2));
     }
 	
 	// Update is called once per frame
