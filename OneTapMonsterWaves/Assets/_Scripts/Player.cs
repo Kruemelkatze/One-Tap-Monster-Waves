@@ -16,10 +16,19 @@ public class Player : Actor
     public Transform fireball;
 
     public AudioClip levelUpSound;
-    public AudioClip gameoverSound;
+    public AudioClip gameOverSound;
 
     public AudioClip kniteHitSound;
     public AudioClip mageHitSound;
+    public AudioClip portionHPSound;
+    public AudioClip potionPoisonSound;
+    public AudioClip swordSound;
+    public AudioClip shieldSound;
+    public AudioClip fireballSound;
+    public AudioClip teleportSound;
+
+
+
 
     public int character;
 
@@ -42,7 +51,7 @@ public class Player : Actor
             death();
             if (gameOver) {
                 Debug.Log("GameOver Sound Start");
-                Grid.SoundManager.PlaySingle(gameoverSound);
+                Grid.SoundManager.PlaySingle(gameOverSound);
                 gameOver = false;
             }
             
@@ -85,6 +94,8 @@ public class Player : Actor
         {
             effectOfPickup(other.name);
             Destroy(other.gameObject);
+
+
         }
     }
 
@@ -111,7 +122,7 @@ public class Player : Actor
     {
         //is death
         Grid.EventHub.TriggerPlayerDied();
-        Grid.SoundManager.PlaySingle(gameoverSound);       
+        Grid.SoundManager.PlaySingle(gameOverSound);       
         
     }
 
@@ -120,31 +131,39 @@ public class Player : Actor
         if (name.Contains("portionHP"))
         {
             setHp(this.hp + 5);
+
+            Grid.SoundManager.PlaySingle(portionHPSound);
         }
         else if (name.Contains("potionLevelUp"))
         {
             this.lvl += 1;
+            Grid.SoundManager.PlaySingle(levelUpSound);
         }
         else if (name.Contains("potionPoison"))
         {
             setHp(this.hp - 5);
+            Grid.SoundManager.PlaySingle(potionPoisonSound);
         }
         else if (name.Contains("sword"))
         {
             this.attack += 5;
+            Grid.SoundManager.PlaySingle(swordSound);
         }
         else if (name.Contains("shield"))
         {
             this.defense += 5;
+            Grid.SoundManager.PlaySingle(shieldSound);
         }
         else if (name.Contains("Fireball"))
         {
             Debug.Log("Fireball");
             fireballActivation();
+            Grid.SoundManager.PlaySingle(fireballSound);
         }
         else if (name.Contains("Teleport"))
         {
             teleportActivation();
+            Grid.SoundManager.PlaySingle(teleportSound);
         }
     }
 

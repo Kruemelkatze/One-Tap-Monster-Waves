@@ -1390,6 +1390,21 @@ Prefab:
       propertyPath: gameoverSound
       value: 
       objectReference: {fileID: 8300000, guid: 984bc74bcd1b9fb42b12d2191c4d6a72, type: 3}
+    - target: {fileID: 114192100251617482, guid: 1ff76768a545fa7448efcbac51d31c82,
+        type: 2}
+      propertyPath: gameOverSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 984bc74bcd1b9fb42b12d2191c4d6a72, type: 3}
+    - target: {fileID: 114192100251617482, guid: 1ff76768a545fa7448efcbac51d31c82,
+        type: 2}
+      propertyPath: teleportSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f9b494a5573189046a03f0932a04ab9e, type: 3}
+    - target: {fileID: 114192100251617482, guid: 1ff76768a545fa7448efcbac51d31c82,
+        type: 2}
+      propertyPath: fireballSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0184f2b9fc1523542a5b5e8a34246f39, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ff76768a545fa7448efcbac51d31c82, type: 2}
   m_IsPrefabParent: 0
