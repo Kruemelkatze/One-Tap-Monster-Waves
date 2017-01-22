@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="9" height="42" tilewidth="20" tileheight="20" nextobjectid="1">
+ <tileset firstgid="1" name="grass" tilewidth="20" tileheight="20" tilecount="40" columns="10">
+  <image source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl1 tiles/grass.png" width="200" height="80"/>
+ </tileset>
+ <tileset firstgid="41" name="a" tilewidth="20" tileheight="20" tilecount="31" columns="0">
+  <tile id="0">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_00.png"/>
+  </tile>
+  <tile id="1">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_01.png"/>
+  </tile>
+  <tile id="2">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_02.png"/>
+  </tile>
+  <tile id="3">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_03.png"/>
+  </tile>
+  <tile id="4">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_04.png"/>
+  </tile>
+  <tile id="5">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_05.png"/>
+  </tile>
+  <tile id="6">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_06.png"/>
+  </tile>
+  <tile id="7">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_07.png"/>
+  </tile>
+  <tile id="8">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_08.png"/>
+  </tile>
+  <tile id="9">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_09.png"/>
+  </tile>
+  <tile id="10">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_10.png"/>
+  </tile>
+  <tile id="11">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_11.png"/>
+  </tile>
+  <tile id="12">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_12.png"/>
+  </tile>
+  <tile id="13">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_13.png"/>
+  </tile>
+  <tile id="14">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_14.png"/>
+  </tile>
+  <tile id="15">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_15.png"/>
+  </tile>
+  <tile id="16">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_16.png"/>
+  </tile>
+  <tile id="17">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_17.png"/>
+  </tile>
+  <tile id="18">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_18.png"/>
+  </tile>
+  <tile id="19">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_19.png"/>
+  </tile>
+  <tile id="20">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_20.png"/>
+  </tile>
+  <tile id="21">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_21.png"/>
+  </tile>
+  <tile id="22">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_22.png"/>
+  </tile>
+  <tile id="23">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_23.png"/>
+  </tile>
+  <tile id="24">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_24.png"/>
+  </tile>
+  <tile id="25">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_25.png"/>
+  </tile>
+  <tile id="26">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_26.png"/>
+  </tile>
+  <tile id="27">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_27.png"/>
+  </tile>
+  <tile id="28">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_28.png"/>
+  </tile>
+  <tile id="29">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_29.png"/>
+  </tile>
+  <tile id="30">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl2/level2_30.png"/>
+  </tile>
+ </tileset>
+ <tileset firstgid="72" name="3" tilewidth="20" tileheight="20" tilecount="19" columns="0">
+  <tile id="0">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_00.png"/>
+  </tile>
+  <tile id="1">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_01.png"/>
+  </tile>
+  <tile id="2">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_02.png"/>
+  </tile>
+  <tile id="3">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_03.png"/>
+  </tile>
+  <tile id="4">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_04.png"/>
+  </tile>
+  <tile id="5">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_05.png"/>
+  </tile>
+  <tile id="6">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_06.png"/>
+  </tile>
+  <tile id="7">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_07.png"/>
+  </tile>
+  <tile id="8">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_08.png"/>
+  </tile>
+  <tile id="9">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_09.png"/>
+  </tile>
+  <tile id="10">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_10.png"/>
+  </tile>
+  <tile id="11">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_11.png"/>
+  </tile>
+  <tile id="12">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_12.png"/>
+  </tile>
+  <tile id="13">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_13.png"/>
+  </tile>
+  <tile id="14">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_14.png"/>
+  </tile>
+  <tile id="15">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_15.png"/>
+  </tile>
+  <tile id="16">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_16.png"/>
+  </tile>
+  <tile id="17">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_17.png"/>
+  </tile>
+  <tile id="18">
+   <image width="20" height="20" source="../../../../../Dropbox/Team-Ordner „OneTapMonsterWaves“/assets/lvl3/lvl3_18.png"/>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="9" height="42">
+  <data encoding="csv">
+72,73,82,73,73,73,82,73,74,
+77,80,88,80,80,80,88,80,75,
+77,80,80,80,80,80,80,80,75,
+86,80,80,80,80,80,80,80,84,
+77,89,80,80,80,80,81,80,75,
+77,80,80,80,80,80,80,80,75,
+77,80,80,80,80,80,80,80,75,
+77,81,80,80,80,80,80,80,75,
+77,80,80,80,80,80,83,80,75,
+77,80,80,80,80,80,80,80,75,
+86,80,89,80,80,80,80,80,84,
+77,80,80,80,80,80,81,80,75,
+77,80,80,80,80,80,80,80,75,
+79,79,76,79,76,76,78,76,78,
+11,11,11,11,11,11,11,11,11,
+56,63,63,63,71,63,63,63,53,
+55,41,41,41,58,41,41,41,54,
+55,41,41,50,48,49,41,41,54,
+70,41,41,68,51,67,41,41,69,
+55,41,41,47,45,46,41,41,54,
+55,41,41,47,45,46,41,41,54,
+55,41,41,47,45,46,41,41,54,
+55,41,41,47,45,46,41,41,54,
+55,41,41,47,45,46,41,41,54,
+70,41,41,47,45,46,41,41,69,
+55,41,41,64,66,65,41,41,54,
+55,41,41,41,41,41,41,41,54,
+60,42,60,42,62,42,60,61,42,
+39,11,11,12,13,39,11,11,12,
+35,34,34,33,32,35,34,34,33,
+1,1,1,15,16,21,1,1,1,
+29,1,1,15,10,26,1,1,1,
+22,1,1,38,10,26,1,1,14,
+23,1,1,38,10,26,1,1,18,
+25,1,1,31,10,37,1,1,19,
+4,1,1,38,10,37,1,1,24,
+27,1,1,38,10,37,1,1,1,
+6,1,1,38,10,37,1,1,14,
+29,1,1,38,10,37,1,1,18,
+22,1,1,38,10,27,1,1,19,
+23,1,1,38,10,27,1,1,24,
+25,1,1,38,10,21,1,1,1
+</data>
+ </layer>
+</map>
