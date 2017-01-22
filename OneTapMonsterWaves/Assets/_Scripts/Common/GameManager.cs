@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour
     void PlayerDied()
     {
         this.playerStarted = false;
+        GameOverControl.score = -1;
+        Invoke("MoveAway", 3);
+
         //Grid.LevelManager.loadLevel()
     }
 
@@ -40,6 +43,13 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("WON");
         this.playerStarted = false;
+        GameOverControl.score = (int)(Grid.Player.xp * 10);
+        Invoke("MoveAway", 3);
+    }
+
+    void MoveAway()
+    {
+        Application.LoadLevel(4);
     }
 
     public void StartPlayer(float worldPosX)
