@@ -97,6 +97,7 @@ MonoBehaviour:
   attackTo: 5
   defenseFrom: 2
   defenseTo: 5
+  deathSound: {fileID: 8300000, guid: 681453db31f93a24dba734b553a0a3e8, type: 3}
 --- !u!212 &212478196722389938
 SpriteRenderer:
   m_ObjectHideFlags: 1

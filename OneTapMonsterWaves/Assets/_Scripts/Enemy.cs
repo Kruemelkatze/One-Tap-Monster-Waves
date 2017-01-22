@@ -16,6 +16,8 @@ public class Enemy : Actor
     public int defenseFrom = 0;
     public int defenseTo = 1;
 
+    public AudioClip deathSound;
+
     // Use this for initialization
     void Start()
     {
