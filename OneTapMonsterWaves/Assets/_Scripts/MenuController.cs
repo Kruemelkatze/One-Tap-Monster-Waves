@@ -11,7 +11,6 @@ public class MenuController : MonoBehaviour {
     public GameObject loadingScreen;
     public GameObject creditsScreen;
     public GameObject introScreen;
-    public MovieTexture introVideo;
 
     // Use this for initialization
     void Start () {

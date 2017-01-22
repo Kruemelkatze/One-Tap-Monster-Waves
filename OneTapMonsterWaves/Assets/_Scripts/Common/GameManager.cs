@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void StartPlayer(float worldPosX)
     {
-        if (playerStarted)
+        if (playerStarted || worldPosX < 0 || worldPosX > Grid.World.worldWidth)
             return;
 
         playerStarted = true;

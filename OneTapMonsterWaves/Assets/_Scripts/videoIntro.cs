@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class videoIntro : MonoBehaviour {
 
-    MovieTexture intro;
     RectTransform rt;
     Vector2 origPos;
 
