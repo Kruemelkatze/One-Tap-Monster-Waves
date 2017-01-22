@@ -38,9 +38,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject skeleton;
     public GameObject ghost;
 
-    public GameObject drakeEnemyPrefab;
-    public GameObject mageEnemyPrefab;
-
     public GameObject graveStonePrefab;
 
     private System.Random rand = new System.Random();
@@ -161,6 +158,9 @@ public class EnemySpawner : MonoBehaviour
             return flash;
         else if (level <= 10)
             return flashRed;
-        else return drakeEnemyPrefab;
+        else if (level <= 11)
+            return ghost;
+        else
+            return skeleton;
     }
 }

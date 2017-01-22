@@ -98,19 +98,27 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   xpBar: {fileID: 0}
   difficult: 5
-  teleportBegin: {fileID: 0}
-  fireball: {fileID: 0}
+  teleportBegin: {fileID: 4079014773802692, guid: f7b4aff5975adb041892ceb95d81f10e,
+    type: 2}
+  fireball: {fileID: 4540189074307420, guid: 11708d394dfd3d241a8211db6b17d62b, type: 2}
   levelUpSound: {fileID: 8300000, guid: 49cb4bff487601446aacdc80bfd11e3e, type: 3}
   gameOverSound: {fileID: 8300000, guid: 984bc74bcd1b9fb42b12d2191c4d6a72, type: 3}
   kniteHitSound: {fileID: 8300000, guid: 54174150e67c9894d805fcac89fb7b88, type: 3}
   mageHitSound: {fileID: 8300000, guid: b2e6925f61f6a7c4a8b3f0d685eccaa5, type: 3}
-  portionHPSound: {fileID: 0}
-  potionPoisonSound: {fileID: 0}
-  swordSound: {fileID: 0}
-  shieldSound: {fileID: 0}
+  portionHPSound: {fileID: 8300000, guid: db9eaf1ad38dbca41bfbcf79d1345c42, type: 3}
+  potionPoisonSound: {fileID: 8300000, guid: a93204142859e2349abeaec89e4a05c7, type: 3}
+  swordSound: {fileID: 8300000, guid: d2634269ea9ad624f8cd4c4437097400, type: 3}
+  shieldSound: {fileID: 8300000, guid: 06efceb42adae0442902b99b83758471, type: 3}
   fireballSound: {fileID: 8300000, guid: 0184f2b9fc1523542a5b5e8a34246f39, type: 3}
   teleportSound: {fileID: 8300000, guid: f9b494a5573189046a03f0932a04ab9e, type: 3}
+  lvlGUI: {fileID: 0}
+  attackGUI: {fileID: 0}
+  defenseGUI: {fileID: 0}
+  intelligenceGUI: {fileID: 0}
+  healthNrText: {fileID: 0}
+  xpNrText: {fileID: 0}
   character: 0
+  MoveToMiddle: 0
 --- !u!212 &212770099691420682
 SpriteRenderer:
   m_ObjectHideFlags: 1

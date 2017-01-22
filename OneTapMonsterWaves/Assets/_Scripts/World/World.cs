@@ -80,7 +80,7 @@ public class World : MonoBehaviour
     void MoveCollider()
     {
         Debug.Log("Before: " + changeCollider.offset.y);
-        var yOffset = this.worldHeight - (worldHeight / numOfScreens) * (currentScreen + 1) + defaultColliderOffset.y;
+        var yOffset = (worldHeight / numOfScreens + 0.5f) * currentScreen + defaultColliderOffset.y;
         changeCollider.offset = new Vector2(changeCollider.offset.x, yOffset);
         Debug.Log("After: " + changeCollider.offset.y);
 

@@ -81,14 +81,14 @@ public class Player : Actor
 
             float newX = transform.position.x;
             float targetX = this.MoveToMiddle ? Grid.World.worldWidth / 2 : this.originalX;
-            float mMovement = this.MoveToMiddle ? movement * 2 : movement / 2;
+            float mMovement = this.MoveToMiddle ? movement * 2 : movement;
             if (newX < targetX)
             {
-                newX = Mathf.Min(newX + f * movement * 2, targetX);
+                newX = Mathf.Min(newX + f * mMovement, targetX);
             }
             else if (newX > targetX)
             {
-                newX = Mathf.Max(newX - f * movement * 2, targetX);
+                newX = Mathf.Max(newX - f * mMovement, targetX);
             }
             transform.position = new Vector2(newX, newY);
         }
