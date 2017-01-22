@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Drake : Enemy
 {
-    public new void dead()
+    public override void dead()
     {
         base.dead();
         Grid.EventHub.TriggerGameWon();

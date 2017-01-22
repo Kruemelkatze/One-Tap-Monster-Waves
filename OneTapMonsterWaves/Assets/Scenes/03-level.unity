@@ -309,6 +309,7 @@ MonoBehaviour:
   attackTo: 1
   defenseFrom: 0
   defenseTo: 1
+  deathSound: {fileID: 8300000, guid: ac795ca34b15774428e0af0ff5527ffb, type: 3}
 --- !u!1 &728363145
 GameObject:
   m_ObjectHideFlags: 0

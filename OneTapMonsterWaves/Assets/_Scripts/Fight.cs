@@ -48,14 +48,18 @@ public class Fight : MonoBehaviour
                 //Debug.Log("Result: " + result);
                 if (result > 0)
                 {
-                    if (enemy.hp - result < 1) {
+                    if (enemy.hp - result < 1)
+                    {
                         enemydeath = true;
-                        Grid.SoundManager.PlaySingle(enemy.deathSound);
-                    } else {
+                        if (enemy.deathSound != null)
+                            Grid.SoundManager.PlaySingle(enemy.deathSound);
+                    }
+                    else
+                    {
                         enemy.hp = enemy.hp - result;
                     }
-                            
-                    
+
+
 
                 }
                 else
@@ -75,12 +79,13 @@ public class Fight : MonoBehaviour
                 if (result > 0)
                 {
 
-                    if (player.hp - result < 1) {
+                    if (player.hp - result < 1)
+                    {
                         playerDeath = true;
                     }
 
                     player.setHp(player.hp - result);
-                    
+
 
                 }
                 else
@@ -109,7 +114,7 @@ public class Fight : MonoBehaviour
             {
                 this.fight = false;
                 Debug.Log("Player died. Player: " + player.hp + ", " + player.xp + "; Enemy:" + enemy.gameObject.name);
-                
+
 
             }
 

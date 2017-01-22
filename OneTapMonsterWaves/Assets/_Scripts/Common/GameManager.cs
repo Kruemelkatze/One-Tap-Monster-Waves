@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     void GameWon()
     {
+        Debug.Log("WON");
         this.playerStarted = false;
     }
 
