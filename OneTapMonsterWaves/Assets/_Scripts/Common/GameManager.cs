@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public bool playerStarted = false;
     public float playerOffsetBottom = 1;
+    public bool TeleportActive = false;
 
 
     // Use this for initialization
     void Start()
     {
         Grid.EventHub.PlayerDied += PlayerDied;
+        Grid.EventHub.GameWon += GameWon;
     }
 
     // Update is called once per frame
@@ -23,9 +25,16 @@ public class GameManager : MonoBehaviour
     void Destroy()
     {
         Grid.EventHub.PlayerDied -= PlayerDied;
+        Grid.EventHub.GameWon -= GameWon;
     }
 
-    void PlayerDied() {
+    void PlayerDied()
+    {
+        this.playerStarted = false;
+    }
+
+    void GameWon()
+    {
         this.playerStarted = false;
     }
 
@@ -35,6 +44,6 @@ public class GameManager : MonoBehaviour
             return;
 
         playerStarted = true;
-        Grid.Player.transform.position = new Vector2(worldPosX, Grid.Player.transform.position.y);
+        Grid.Player.StartPlayer(worldPosX);
     }
 }

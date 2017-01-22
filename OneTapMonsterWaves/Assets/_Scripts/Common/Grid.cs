@@ -55,7 +55,7 @@ public class Grid : MonoBehaviour
     public static SoundManager SoundManager;
     public static LevelManager LevelManager;
     public static GameObject MainCamera;
-    public static GameObject Player;
+    public static Player Player;
     public static World World;
 
     // when the program launches, Grid will check that all the needed elements are in place
@@ -97,7 +97,10 @@ public class Grid : MonoBehaviour
         LevelManager = (LevelManager)SafeComponent(g, "LevelManager");
 
         MainCamera = SafeFind("Main Camera");
-        Player = SafeFind("Player");
+
+        g = SafeFind("Player");
+        Player = (Player)SafeComponent(g, "Player");
+
     }
 
     // this has no purpose other than for developers wondering HTF you use Grid
@@ -119,7 +122,7 @@ public class Grid : MonoBehaviour
     }
 
     public Component SafeComponent(GameObject g, string s)
-    {   
+    {
         Component c = g.GetComponent(s);
         if (c == null) bigProblem("The '" + s + "' component was not found in Gameobject.");
         return c;

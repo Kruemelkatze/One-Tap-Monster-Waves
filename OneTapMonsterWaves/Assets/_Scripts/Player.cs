@@ -16,6 +16,9 @@ public class Player : Actor
     public Transform fireball;
 
     private bool move = true;
+    public bool MoveToMiddle = false;
+
+    private float originalX;
 
 
     // Use this for initialization
@@ -37,7 +40,19 @@ public class Player : Actor
             //Moving
             float f = Time.deltaTime;
             float newY = transform.position.y + f * movement;
-            transform.position = new Vector2(transform.position.x, newY);
+
+            float newX = transform.position.x;
+            float targetX = this.MoveToMiddle ? Grid.World.worldWidth / 2 : this.originalX;
+            float mMovement = this.MoveToMiddle ? movement * 2 : movement / 2;
+            if (newX < targetX)
+            {
+                newX = Mathf.Min(newX + f * movement * 2, targetX);
+            }
+            else if (newX > targetX)
+            {
+                newX = Mathf.Max(newX - f * movement * 2, targetX);
+            }
+            transform.position = new Vector2(newX, newY);
         }
     }
 
@@ -54,11 +69,17 @@ public class Player : Actor
             fight.player = this;
             fight.fighting();
         }
-        if(other.tag == "PickUp")
+        if (other.tag == "PickUp")
         {
             effectOfPickup(other.name);
             Destroy(other.gameObject);
         }
+    }
+
+    public void StartPlayer(float worldPosX)
+    {
+        transform.position = new Vector2(worldPosX, Grid.Player.transform.position.y);
+        this.originalX = worldPosX;
     }
 
     IEnumerator waitingInSec(float time)
@@ -72,19 +93,21 @@ public class Player : Actor
         healthbar.healthSlider.value = (float)hp;
     }
 
-    public void addHp(double addHp) {
+    public void addHp(double addHp)
+    {
         setHp(hp + addHp);
     }
 
-    public void addIntelligence(float addintelligence) {
+    public void addIntelligence(float addintelligence)
+    {
         intelligence = intelligence + addintelligence;
     }
 
     void death()
     {
         //is death
-        Grid.EventHub.TriggerPlayerDied();       
-        
+        Grid.EventHub.TriggerPlayerDied();
+
     }
 
     private void effectOfPickup(string name)
@@ -136,15 +159,18 @@ public class Player : Actor
 
     IEnumerator StartTeleport(float time, int teleportPositionY)
     {
+        Grid.GameManager.TeleportActive = true;
         this.move = false;
         Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
         this.GetComponent<SpriteRenderer>().enabled = false;
         yield return new WaitForSeconds(time);
         this.transform.position = new Vector3(Random.Range(1, 15), 3, 0);
+        this.originalX = this.transform.position.x;
         Instantiate(teleportBegin, this.gameObject.transform.position, Quaternion.identity);
         yield return new WaitForSeconds(time);
         this.GetComponent<SpriteRenderer>().enabled = true;
         move = true;
+        Grid.GameManager.TeleportActive = false;
     }
 
     IEnumerator StartFireball(float time)
@@ -152,7 +178,7 @@ public class Player : Actor
         this.move = false;
         Transform existingFireball = Instantiate(fireball, this.gameObject.transform.position, Quaternion.identity);
         float radius = existingFireball.localScale.x + intelligence;
-        existingFireball.GetComponent<CircleCollider2D>().radius += (intelligence/10);
+        existingFireball.GetComponent<CircleCollider2D>().radius += (intelligence / 10);
         existingFireball.localScale = new Vector3(radius, radius, 0);
         yield return new WaitForSeconds(time);
         move = true;
