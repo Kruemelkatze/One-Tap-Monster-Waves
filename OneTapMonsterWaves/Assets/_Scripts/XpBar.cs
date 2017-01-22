@@ -22,7 +22,8 @@ public class XpBar : MonoBehaviour {
     public void getXp(double xp) {
         if (xpSlider.value + (float)xp >= xpSlider.maxValue) {
 
-            
+            Grid.SoundManager.PlaySingle(player.levelUpSound);
+
             bool levelUp = true;
             while (levelUp) {
                 double levelUpXp = (xpSlider.value + (float) xp) - xpSlider.maxValue;

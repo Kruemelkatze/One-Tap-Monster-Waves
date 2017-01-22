@@ -15,10 +15,38 @@ public class Player : Actor
     public Transform teleportBegin;
     public Transform fireball;
 
+    public AudioClip levelUpSound;
+    public AudioClip gameOverSound;
+
+    public AudioClip kniteHitSound;
+    public AudioClip mageHitSound;
+    public AudioClip portionHPSound;
+    public AudioClip potionPoisonSound;
+    public AudioClip swordSound;
+    public AudioClip shieldSound;
+    public AudioClip fireballSound;
+    public AudioClip teleportSound;
+
+
+    public GUIText lvlGUI;
+    public GUIText attackGUI;
+    public GUIText defenseGUI;
+    public GUIText intelligenceGUI;
+
+    public Text healthNrText;
+    public Text xpNrText;
+
+
+
+
+    public int character;
+
     private bool move = true;
     public bool MoveToMiddle = false;
 
     private float originalX;
+
+    bool gameOver = true;
 
 
     // Use this for initialization
@@ -30,9 +58,19 @@ public class Player : Actor
     // Update is called once per frame
     void Update()
     {
+        guiUpdate();
+
         if (hp < 1)
         {
             death();
+            if (gameOver) {
+                Debug.Log("GameOver Sound Start");
+                Grid.SoundManager.PlaySingle(gameOverSound);
+                gameOver = false;
+            }
+            
+
+           
         }
 
         if (Grid.GameManager.playerStarted && move)
@@ -68,11 +106,22 @@ public class Player : Actor
             fight.enemy = enemy;
             fight.player = this;
             fight.fighting();
+            if (character <= 0) {
+                Grid.SoundManager.PlaySingle(kniteHitSound);
+
+            } else if (character <= 1) {
+                Grid.SoundManager.PlaySingle(mageHitSound);
+            } else {
+                Grid.SoundManager.PlaySingle(kniteHitSound);
+            }
+
         }
         if (other.tag == "PickUp")
         {
             effectOfPickup(other.name);
             Destroy(other.gameObject);
+
+
         }
     }
 
@@ -90,7 +139,7 @@ public class Player : Actor
     public void setHp(double hp)
     {
         this.hp = hp;
-        healthbar.healthSlider.value = (float)hp;
+        healthbar.healthSlider.value = (float) hp;
     }
 
     public void addHp(double addHp)
@@ -107,7 +156,7 @@ public class Player : Actor
     {
         //is death
         Grid.EventHub.TriggerPlayerDied();
-
+        Grid.SoundManager.PlaySingle(gameOverSound);
     }
 
     private void effectOfPickup(string name)
@@ -115,31 +164,39 @@ public class Player : Actor
         if (name.Contains("portionHP"))
         {
             setHp(this.hp + 5);
+
+            Grid.SoundManager.PlaySingle(portionHPSound);
         }
         else if (name.Contains("potionLevelUp"))
         {
             this.lvl += 1;
+            Grid.SoundManager.PlaySingle(levelUpSound);
         }
         else if (name.Contains("potionPoison"))
         {
             setHp(this.hp - 5);
+            Grid.SoundManager.PlaySingle(potionPoisonSound);
         }
         else if (name.Contains("sword"))
         {
             this.attack += 5;
+            Grid.SoundManager.PlaySingle(swordSound);
         }
         else if (name.Contains("shield"))
         {
             this.defense += 5;
+            Grid.SoundManager.PlaySingle(shieldSound);
         }
         else if (name.Contains("Fireball"))
         {
             Debug.Log("Fireball");
             fireballActivation();
+            Grid.SoundManager.PlaySingle(fireballSound);
         }
         else if (name.Contains("Teleport"))
         {
             teleportActivation();
+            Grid.SoundManager.PlaySingle(teleportSound);
         }
     }
 
@@ -183,6 +240,18 @@ public class Player : Actor
         yield return new WaitForSeconds(time);
         move = true;
     }
+
+    void guiUpdate() {
+        lvlGUI.text = lvl.ToString();
+        attackGUI.text = attack.ToString();
+        defenseGUI.text = defense.ToString();
+        intelligenceGUI.text = intelligence.ToString();
+
+        healthNrText.text = hp.ToString();
+        xpNrText.text = xp.ToString();
+    }
+
+
 }
 
 

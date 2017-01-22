@@ -95,6 +95,7 @@ public class Fight : MonoBehaviour
             {
                 this.fight = false;
                 Debug.Log("Player died. Player: " + player.hp + ", " + player.xp + "; Enemy:" + enemy.gameObject.name);
+                
 
             }
 

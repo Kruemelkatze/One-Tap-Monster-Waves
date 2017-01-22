@@ -98,6 +98,19 @@ MonoBehaviour:
   healthbar: {fileID: 0}
   xpBar: {fileID: 0}
   difficult: 5
+  teleportBegin: {fileID: 0}
+  fireball: {fileID: 0}
+  levelUpSound: {fileID: 8300000, guid: 49cb4bff487601446aacdc80bfd11e3e, type: 3}
+  gameOverSound: {fileID: 8300000, guid: 984bc74bcd1b9fb42b12d2191c4d6a72, type: 3}
+  kniteHitSound: {fileID: 8300000, guid: 54174150e67c9894d805fcac89fb7b88, type: 3}
+  mageHitSound: {fileID: 8300000, guid: b2e6925f61f6a7c4a8b3f0d685eccaa5, type: 3}
+  portionHPSound: {fileID: 0}
+  potionPoisonSound: {fileID: 0}
+  swordSound: {fileID: 0}
+  shieldSound: {fileID: 0}
+  fireballSound: {fileID: 8300000, guid: 0184f2b9fc1523542a5b5e8a34246f39, type: 3}
+  teleportSound: {fileID: 8300000, guid: f9b494a5573189046a03f0932a04ab9e, type: 3}
+  character: 0
 --- !u!212 &212770099691420682
 SpriteRenderer:
   m_ObjectHideFlags: 1
