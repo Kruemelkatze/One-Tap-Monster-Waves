@@ -33,4 +33,9 @@ public class LevelManager : MonoBehaviour {
             Application.LoadLevel("03-level");
         }
     }
+
+    void loadNewGame()
+    {
+
+    }
 }

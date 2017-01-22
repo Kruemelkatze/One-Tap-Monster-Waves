@@ -96,7 +96,11 @@ public class Grid : MonoBehaviour
         EnemySpawner = (EnemySpawner)SafeComponent(g, "EnemySpawner");
 
         g = SafeFind("World");
-        World = (World)SafeComponent(g, "World");
+        if(g != null)
+        {
+            World = (World)SafeComponent(g, "World");
+        }
+       
 
         g = SafeFind("LevelManager");
         LevelManager = (LevelManager)SafeComponent(g, "LevelManager");
@@ -105,7 +109,6 @@ public class Grid : MonoBehaviour
 
         g = SafeFind("Player");
         Player = (Player)SafeComponent(g, "Player");
-
     }
 
     // this has no purpose other than for developers wondering HTF you use Grid
