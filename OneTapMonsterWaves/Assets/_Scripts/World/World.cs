@@ -62,10 +62,10 @@ public class World : MonoBehaviour
                 MoveCollider();
                 Grid.EventHub.TriggerPlayerReachedTopEvent(currentScreen);
             }
-            else
-            {
-                Grid.EventHub.TriggerGameWon();
-            }
+            // else
+            // {
+            //     Grid.EventHub.TriggerGameWon();
+            // }
         }
     }
 

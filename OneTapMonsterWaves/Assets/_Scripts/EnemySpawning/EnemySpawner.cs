@@ -41,6 +41,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject drakeEnemyPrefab;
     public GameObject mageEnemyPrefab;
 
+    public GameObject graveStonePrefab;
+
     private System.Random rand = new System.Random();
 
     // private List<float> 

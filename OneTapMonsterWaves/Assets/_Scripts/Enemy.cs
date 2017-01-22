@@ -84,9 +84,12 @@ public class Enemy : Actor
     }
 
 
-    IEnumerator dead()
+    public virtual void dead()
     {
-        yield return new WaitForSeconds(2);
+        var graveStone = GameObject.Instantiate(Grid.EnemySpawner.graveStonePrefab);
+        graveStone.transform.parent = transform.parent;
+        graveStone.transform.localScale = transform.localScale;
+        graveStone.transform.position = transform.position;
         Destroy(gameObject);
     }
 

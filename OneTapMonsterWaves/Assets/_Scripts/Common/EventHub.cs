@@ -13,6 +13,7 @@ public class EventHub : MonoBehaviour
     public delegate void GameObjectIntegerParamEvent(GameObject enemy, int value);
     public delegate void GameObjectBoolParamEvent(GameObject enemy, bool value);
     public delegate void MovementParamEvent(Vector3 position, Vector3 location, bool lerp = false, bool rotationReset = false);
+    public delegate void GameObjectVector2Event(GameObject obj, Vector2 location);
 
     #endregion
 
@@ -23,6 +24,7 @@ public class EventHub : MonoBehaviour
     public event VoidEvent GameWon;
     public event IntegerParamEvent PlayerReachedTopEvent;
     public event GameObjectParamEvent TestGOEvent;
+    public event GameObjectParamEvent EnemyDied;
 
     #endregion
 
@@ -49,6 +51,12 @@ public class EventHub : MonoBehaviour
     {
         if (PlayerReachedTopEvent != null)
             PlayerReachedTopEvent(screen);
+    }
+
+    public void TriggerEnemyDied(GameObject obj)
+    {
+        if (EnemyDied != null)
+            EnemyDied(obj);
     }
 
 

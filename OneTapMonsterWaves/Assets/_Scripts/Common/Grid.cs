@@ -55,6 +55,8 @@ public class Grid : MonoBehaviour
     public static SoundManager SoundManager;
     public static LevelManager LevelManager;
     public static GameObject MainCamera;
+
+    public static EnemySpawner EnemySpawner;
     public static Player Player;
     public static World World;
 
@@ -89,6 +91,9 @@ public class Grid : MonoBehaviour
         GameManager = (GameManager)SafeComponent(g, "GameManager");
         g = SafeFind("SoundManager");
         SoundManager = (SoundManager)SafeComponent(g, "SoundManager");
+
+        g = SafeFind("EnemySpawner");
+        EnemySpawner = (EnemySpawner)SafeComponent(g, "EnemySpawner");
 
         g = SafeFind("World");
         World = (World)SafeComponent(g, "World");

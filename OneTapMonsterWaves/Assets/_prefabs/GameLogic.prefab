@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4822470420556574}
   - component: {fileID: 114001068351780742}
   m_Layer: 0
-  m_Name: EnemySpawningSystem
+  m_Name: EnemySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -444,6 +444,8 @@ MonoBehaviour:
   drakeEnemyPrefab: {fileID: 1307757574687402, guid: 3e60b88e587efc84d9adb8e0f91a605c,
     type: 2}
   mageEnemyPrefab: {fileID: 1648542299644104, guid: b4b653c836ef6e64f857e39db9371b72,
+    type: 2}
+  graveStonePrefab: {fileID: 1102613976124776, guid: 945b5b4e243336641b13df369440288d,
     type: 2}
 --- !u!114 &114280402421562444
 MonoBehaviour:

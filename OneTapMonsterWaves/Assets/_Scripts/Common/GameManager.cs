@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     void PlayerDied()
     {
         this.playerStarted = false;
+        //Grid.LevelManager.loadLevel()
     }
 
     void GameWon()
