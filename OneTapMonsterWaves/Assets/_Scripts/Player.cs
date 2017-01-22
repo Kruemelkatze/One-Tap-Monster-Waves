@@ -15,7 +15,17 @@ public class Player : Actor
     public Transform teleportBegin;
     public Transform fireball;
 
+    public AudioClip levelUpSound;
+    public AudioClip gameoverSound;
+
+    public AudioClip kniteHitSound;
+    public AudioClip mageHitSound;
+
+    public int character;
+
     private bool move = true;
+
+    bool gameOver = true;
 
 
     // Use this for initialization
@@ -30,6 +40,14 @@ public class Player : Actor
         if (hp < 1)
         {
             death();
+            if (gameOver) {
+                Debug.Log("GameOver Sound Start");
+                Grid.SoundManager.PlaySingle(gameoverSound);
+                gameOver = false;
+            }
+            
+
+           
         }
 
         if (Grid.GameManager.playerStarted && move)
@@ -53,6 +71,15 @@ public class Player : Actor
             fight.enemy = enemy;
             fight.player = this;
             fight.fighting();
+            if (character <= 0) {
+                Grid.SoundManager.PlaySingle(kniteHitSound);
+
+            } else if (character <= 1) {
+                Grid.SoundManager.PlaySingle(mageHitSound);
+            } else {
+                Grid.SoundManager.PlaySingle(kniteHitSound);
+            }
+
         }
         if(other.tag == "PickUp")
         {
@@ -83,7 +110,8 @@ public class Player : Actor
     void death()
     {
         //is death
-        Grid.EventHub.TriggerPlayerDied();       
+        Grid.EventHub.TriggerPlayerDied();
+        Grid.SoundManager.PlaySingle(gameoverSound);       
         
     }
 
